@@ -84,6 +84,12 @@ Stable claim/evidence/assumption IDs across snapshots are essential. Reusing an 
 
 For the interpretation and limitations, see [external pilot protocol](pilot/TRIAL-PROTOCOL.md), [pilot execution notes](pilot/README.md), [protocol](docs/PROTOCOL.md), [synthetic challenge](benchmarks/revision_challenge/README.md) and [external trial](docs/EXTERNAL-TRIAL.md).
 
+## Public external candidate pool — collected 2026-10-29
+
+A first, **retrospectively selected, unblinded** list of 10 actual upstream technical-document/code revisions from two independent open-source projects is available in [public candidate discovery](pilot/external_candidates/README.md), with [immutable source pointers](pilot/external_candidates/CANDIDATES.json). For every candidate, the selected file was successfully retrieved at its first-parent commit and at the merged commit, and the content differed.
+
+**This is candidate discovery, not an external study result.** The selection was enriched for previously reported errors, no claim-level extraction has been locked, no independent reviewers have rated anything, and no external method comparison has been run. The source files remain in their upstream projects.
+
 ## Privacy and external collaboration
 
 Everything committed here is synthetic or public documentation. Never commit unpublished third-party blueprints, private datasets, partner code, secrets, or any restricted ArcTopia work. If a partner wants to test the framework against their own proprietary documents, they can run it **locally** and share only a reviewed, sanitized report if they choose.
