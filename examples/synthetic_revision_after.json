@@ -1,0 +1,46 @@
+{
+  "dataset": "SYNTHETIC REVISION — AFTER; no third-party documents",
+  "claims": [
+    {
+      "id": "C-01",
+      "statement": "A toy design meets its timing limit.",
+      "asserted_status": "verified",
+      "evidence": [
+        {
+          "id": "E-01",
+          "kind": "hardware_report",
+          "locator": "synthetic://timing-draft",
+          "reviewed": true,
+          "applicability": "matched"
+        }
+      ],
+      "assumptions": [
+        {
+          "id": "A-01",
+          "description": "Timing bound is achieved",
+          "after": "claimed_closed",
+          "closure_evidence_id": "E-01"
+        },
+        {
+          "id": "A-NEW",
+          "description": "Placement constraints were satisfied",
+          "after": "open"
+        }
+      ]
+    },
+    {
+      "id": "C-03",
+      "statement": "Another toy claim stays in scope.",
+      "asserted_status": "hypothesis",
+      "evidence": [],
+      "assumptions": []
+    },
+    {
+      "id": "C-04",
+      "statement": "A new toy assertion appears in the revision.",
+      "asserted_status": "hypothesis",
+      "evidence": [],
+      "assumptions": []
+    }
+  ]
+}

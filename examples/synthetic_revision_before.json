@@ -1,0 +1,52 @@
+{
+  "dataset": "SYNTHETIC REVISION — BEFORE; no third-party documents",
+  "claims": [
+    {
+      "id": "C-01",
+      "statement": "A toy design meets its timing limit.",
+      "asserted_status": "hypothesis",
+      "evidence": [
+        {
+          "id": "E-01",
+          "kind": "hardware_report",
+          "locator": "synthetic://timing-draft",
+          "reviewed": false,
+          "applicability": "unknown"
+        }
+      ],
+      "assumptions": [
+        {
+          "id": "A-01",
+          "description": "Timing bound is achieved",
+          "after": "open"
+        }
+      ]
+    },
+    {
+      "id": "C-02",
+      "statement": "A toy mechanism produces a stable output.",
+      "asserted_status": "supported",
+      "evidence": [],
+      "assumptions": [
+        {
+          "id": "A-02",
+          "description": "Output stability transfers to the target",
+          "after": "open"
+        }
+      ]
+    },
+    {
+      "id": "C-03",
+      "statement": "Another toy claim stays in scope.",
+      "asserted_status": "hypothesis",
+      "evidence": [],
+      "assumptions": [
+        {
+          "id": "A-03",
+          "description": "Unmeasured coupling",
+          "after": "open"
+        }
+      ]
+    }
+  ]
+}

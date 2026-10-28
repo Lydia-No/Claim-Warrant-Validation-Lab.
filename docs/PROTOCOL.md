@@ -1,36 +1,44 @@
-# External Test Protocol (exploratory; not a study result)
+# External Test Protocol — v0.2 (exploratory, not a study result)
 
-## Purpose
+## Scope
 
-Stress-test the difference between correcting a document and establishing that its claims have independently warranted support. This public sandbox is **not** the private Research Claim Governance Study 1 instrument; its results must not be attributed to or pooled with that study.
+The objective is to detect **claim-laundering risks** in revisions, not to produce a certificate. The public tool is separate from private Research Claim Governance instruments. The independent scientific evidence evaluation required to establish truth is *not automated* here.
 
-## Unit of audit
+### Required distinctions
 
-One concrete claim, its evidence items, target regime, and an explicit list of assumptions asserted to have been closed or removed. Distinguish a source's existence, source content, transfer validity, implementation and target performance.
+- **Bibliographic existence:** the DOI resolves to a deposited metadata record (Crossref coverage is not universal).
+- **Metadata agreement:** reported bibliographic fields agree with Crossref deposit metadata. This does not assess the paper's content.
+- **Mechanism support:** a published method actually establishes the stated mechanism under relevant boundary conditions.
+- **Transfer validity:** the method remains valid for the actual target regime, representation and hardware.
+- **Formal proof / hardware result:** the exact design satisfies the property; a plausible equation or RTL description is not enough.
+- **Assay closure:** an empirical assumption can be considered resolved only after independently reviewed applicable evidence and explicit failure criteria.
 
-## Separation of tasks
+### Revisions
 
-1. **Extract** each concrete assertion and its actual referenced evidence. Preserve exact quotations with identifiers, but only where permitted.
-2. **Check existence and source accuracy** independently. Record a bibliographic confirmation separately from target applicability.
-3. **Assess scope**: does the evidence address the exact representation, operating regime, materials, version, hardware and bounds asserted?
-4. **Reproduce** derivations and implementation tests independently when practicable. Record reproducible artifacts and environments.
-5. **Review revisions**: every patched claim and citation can introduce another assumption; capture it instead of automatically upgrading its status.
-6. **Adjudicate** unresolved assumptions through an external independent review. Do not treat the tool's structurally eligible closures as validated ones.
+Use stable IDs to map the same claim, source and assumption across snapshots. The `--compare` command reports:
 
-## Controls and non-goals
+- newly asserted claim-strength upgrades;
+- changed evidence locators with reused IDs;
+- claimed changes from unknown/mismatched to matched applicability;
+- assumptions newly claimed closed (not evidence of closure);
+- assumptions removed or newly introduced;
+- deleted claims, withdrawn assumptions, and changed assumption meanings.
 
-- Compare a document before and after revision, preserving source hashes.
-- Include known-valid and known-invalid synthetic cases as controls.
-- Keep withdrawal/scope reduction distinct from assumption validation.
-- No fixed 90% or 10x success target is imposed.
-- Do not infer compliance with DO-254, DO-178C, or any physical, cryptographic, safety or regulatory standard from metadata checks.
+Count source withdrawals and deletions as **scope changes, never verified resolutions**. A change report is not an assay-contraction scorecard. Do not claim 10x or 90% reduction based on these counters.
 
-## Output interpretation
+### External bibliographic checks
 
-`structurally_eligible_closures_not_verified` means that user-supplied metadata connects an assumption to a reviewed and reportedly applicable artifact. It does not establish the artifact is correct or truly independent.
+The optional Crossref lookup uses the publicly documented `/works/{doi}` metadata endpoint. Only DOI identifiers are sent; run only with authorization to use the listed identifiers. DOI, title, year and optional bibliographic fields are checked independently of the document's own declarations. A matching record means **metadata match only**; it does not imply peer review, non-retraction, correct equations, domain applicability, valid engineering design or safe operation.
 
-`remaining_not_structurally_closed` excludes withdrawals from the active scope but does not certify anything. The `verified_empirical_reduction` field is always `null` in this version.
+Invalid DOI, Crossref-not-found, lookup errors and incomplete metadata all have different statuses. Absence from Crossref does **not** imply that a publication is fabricated; other registries and offline historical works exist.
 
-## Next falsifiable extension
+### Independent evaluation (future work)
 
-Use a genuinely external dataset and independent subject-matter adjudicators. Evaluate precision/recall of the findings and compare the tool against a basic checklist under equal time/evidence access. Pre-register decision thresholds; report error and false-positive rates. No claims of added research value before that evaluation.
+1. Obtain authorized, fixed versions of the original and revised artifacts.
+2. Pre-register precise factual assertions to test and explicit pass/fail thresholds.
+3. Include known-valid, known-invalid and ambiguous cases; record domain and boundary conditions.
+4. Use external specialist reviewers (blind where feasible), independently reproduce derivations, and verify source content directly.
+5. Compare paired audits against generic checklist controls under matched evidence and time budgets.
+6. Track both false approvals and unjustified denials. Preserve all disagreement and null outcomes.
+
+Do not present software-unit-test success as evidence of improved scientific validity or independent reviewer agreement.

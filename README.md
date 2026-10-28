@@ -1,51 +1,88 @@
 # Claim-Warrant Validation Lab
 
-**Public, independent, experimental sandbox for structural claim, evidence and correction audits.**
+**Public, independent, experimental research-claim and revision audit sandbox.**
 
 **Research direction and project ownership:** Linda Thorstensen. AI assistance is limited to implementation, testing, drafting and verification support under her direction.
 
-This repository is a deliberately narrow public demonstrator. It is **not** the implementation of any private research framework and does **not** disclose ArcTopia or Research Claim Governance architectures, protocols, datasets or restricted keys.
+This public demonstrator is **not** the private Research Claim Governance implementation or a release of ArcTopia research, protocols, datasets or restricted keys.
 
-## Question
+## Core question
 
-When a technical document replaces a weak citation or revises a calculation, has it actually closed the assumption it relied on—or merely moved that assumption into a new explanation?
+When a technical document fixes a weak citation or calculation, has the revision reduced its *unverified assumptions*, or merely replaced them with newer explanations and stronger labels?
 
-This baseline tool checks *declared metadata*, not scientific truth. It can identify missing or mismatched support, overly strong claim labels, and unsupported closure declarations. It does **not** independently verify publications, reproduce equations, simulate hardware, validate physical behavior, or establish epistemic entitlement.
+### What v0.2 can do
 
-## Quick start (Python 3.10+, standard library only)
+1. **Structural claim checks:** flag missing evidence, declared applicability mismatches, and unjustified "proven" labels (author-supplied metadata only).
+2. **Before/after comparison:** match stable IDs across snapshots; report added/removed claims, newly asserted closures, changed assumptions, relabeled evidence and status upgrades. Removed claims/assumptions are never counted as verified.
+3. **Optional independent DOI metadata lookup:** explicitly opt in to querying Crossref's `/works/{doi}` endpoint. Compare the returned DOI, title, publication year and optional author, journal, volume, issue, pages against *declared bibliographic metadata*. This is **record identification**, not scientific verification.
+
+**It does not** validate physical regimes, prove hardware timing or mathematical identities, verify standards compliance, detect all retractions, establish independence of reviewers, or justify any numeric assay reduction.
+
+## Install / run (Python 3.10+; standard library only)
 
 ```bash
+# Single-record audit (offline)
 python -m auditlab examples/synthetic_claims.json
-python -m auditlab examples/synthetic_claims.json --json
+
+# Revision analysis: what did the new version actually change?
+python -m auditlab --compare examples/synthetic_revision_before.json examples/synthetic_revision_after.json
+
+# Machine-readable revision report
+python -m auditlab --compare examples/synthetic_revision_before.json examples/synthetic_revision_after.json --json
+
+# OPTIONAL: query Crossref using DOIs in AFTER (sends DOI identifiers to Crossref)
+python -m auditlab --compare examples/synthetic_revision_before.json examples/synthetic_revision_after.json --check-dois --json
+
+# Local automated checks (no network)
 python -m unittest discover -s tests -v
 ```
 
-The provided data are entirely fictional. No source material from Genesis Genome or any other external project is included.
+The synthetic examples have no real scholarly DOIs. To try the optional metadata lookup, prepare **your own authorized** JSON records using registered publication DOIs. Non-DOI or synthetic locators return `unsupported_locator`, not "phantom."
 
-## Input contract
+## Minimal data format
 
-A JSON object with `claims` list. Each claim has an `id`, `statement`, and optional `asserted_status` (`hypothesis`, `supported`, `verified`, `proven`), plus `evidence` and `assumptions` arrays.
+```json
+{
+  "claims": [{
+    "id": "C-001",
+    "statement": "An example numerical method satisfies a claimed bound.",
+    "asserted_status": "supported",
+    "evidence": [{
+      "id": "E-001",
+      "kind": "publication",
+      "locator": "10.1234/placeholder",
+      "reviewed": false,
+      "applicability": "unknown",
+      "bibliography": {
+        "doi": "10.1234/placeholder",
+        "title": "Expected exact title",
+        "year": 2024,
+        "first_author": "Example"
+      }
+    }],
+    "assumptions": [{
+      "id": "A-001",
+      "description": "Published operating regime transfers to target hardware",
+      "after": "open"
+    }]
+  }]
+}
+```
 
-Evidence fields: `id`, `kind` (`publication`, `standard`, `derivation`, `hardware_report`, `experiment`), `locator`, `reviewed` (boolean **supplied by the record author**), and `applicability` (`matched`, `mismatch`, `unknown`).
+The DOI above is **only a placeholder**. `reviewed` and `applicability` are asserted *input labels*, not audited results. The `bibliography` object is optional, but a Crossref metadata-match result requires at least a matching title and publication year. Optional `first_author`, `container_title`, `volume`, `issue`, and `page` are checked when supplied.
 
-Assumption fields: `id`, `description`, `after` (`open`, `claimed_closed`, `withdrawn`), optional `closure_evidence_id`, and `withdrawal_reason` when withdrawn.
+Stable claim/evidence/assumption IDs across snapshots are essential. Reusing an ID for new content is flagged. JSON content fingerprints support audit bookkeeping; they do not prove a file's external provenance.
 
-A structurally eligible closure requires referenced evidence marked reviewed and matched. **That is only a candidate for independent examination**. The tool never marks a scientific claim verified and never credits a withdrawn assumption as proof. Any test-surface reduction remains undefined until independently adjudicated.
+For the interpretation and limitations, see [protocol](docs/PROTOCOL.md) and [external trial](docs/EXTERNAL-TRIAL.md).
 
-## Safety and use boundaries
+## Privacy and external collaboration
 
-- Do not upload private research, unpublished partner documents or restricted code without permission.
-- Do not claim that a verified bibliographic reference establishes target-domain applicability.
-- Do not optimize the audit to achieve a pre-selected reduction percentage.
-- Keep raw evidence, independent reviewer decisions and change history outside self-scored summaries.
-- No personal, partner or third-party project is endorsed or evaluated by this sample.
+Everything committed here is synthetic or public documentation. Never commit unpublished third-party blueprints, private datasets, partner code, secrets, or any restricted ArcTopia work. If a partner wants to test the framework against their own proprietary documents, they can run it **locally** and share only a reviewed, sanitized report if they choose.
 
-See [protocol](docs/PROTOCOL.md), [contributing](CONTRIBUTING.md), and [security](SECURITY.md).
+The online Crossref option sends only DOI identifiers (not claim text, blueprints or assumption descriptions). The tool will not make any network request without `--check-dois`.
 
-## Project status
+## Status and intellectual property
 
-**v0.1 structural pilot, synthetic-only. No empirical validation or original-method superiority claimed.**
+**v0.2: structural prototype with opt-in independent bibliographic metadata lookup and paired revision differencing.** The synthetic automated tests are software tests, not empirical validation of research findings. The tool does not implement, supersede or claim to validate the locked private Research Claim Governance Study 1.
 
-## Rights
-
-Copyright © 2026 Linda Thorstensen. No software license has been granted by this repository. Public visibility alone does not grant rights to reproduce, redistribute or reuse the code. Licensing can be decided separately.
+Copyright © 2026 Linda Thorstensen. No software license has been granted by this repository. Public visibility alone does not grant unrestricted rights to reproduce, redistribute or reuse the code. Licensing may be decided separately.
