@@ -6,9 +6,22 @@ A removed assumption or narrower claim is not a successfully tested assumption.
 from __future__ import annotations
 import hashlib
 import json
+import re
+from decimal import Decimal, InvalidOperation
 from .engine import audit
 
 STATUS_ORDER = {"hypothesis": 0, "supported": 1, "verified": 2, "proven": 3}
+
+NUMBER = re.compile(r"(?<![A-Za-z0-9_])[-+]?(?:\d+(?:\.\d+)?(?:[eE][-+]?\d+)?)")
+
+
+def _numeric_signature(text: str) -> tuple[str, ...]:
+    """Detect changes to ordinary numeric literals; NOT a mathematical parser."""
+    try:
+        return tuple(str(Decimal(token).normalize()) for token in NUMBER.findall(text))
+    except InvalidOperation:
+        return tuple(NUMBER.findall(text))
+
 
 
 def _map(items: list[dict]) -> dict[str, dict]:
@@ -39,6 +52,8 @@ def compare(before: dict, after: dict) -> dict:
         old, new = earlier[cid], later[cid]
         if old["statement"] != new["statement"]:
             event("CLAIM_TEXT_CHANGED", cid)
+            if _numeric_signature(old["statement"]) != _numeric_signature(new["statement"]):
+                event("NUMERIC_CLAIM_LITERAL_CHANGED_REQUIRES_REVIEW", cid)
         old_status = old.get("asserted_status", "hypothesis")
         new_status = new.get("asserted_status", "hypothesis")
         if STATUS_ORDER[new_status] > STATUS_ORDER[old_status]:

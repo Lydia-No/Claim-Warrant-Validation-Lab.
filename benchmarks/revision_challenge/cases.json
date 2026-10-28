@@ -1,0 +1,1902 @@
+{
+  "dataset": "SYNTHETIC ONLY — designed with tool, not independent holdout or external adjudication",
+  "task": "Does a revision require independent re-evaluation of its evidential entitlement?",
+  "unit": "one before/after pair",
+  "label_definition": "Review needed for changes in claim, evidence, or assumption meaning; not for trivial formatting.",
+  "cases": [
+    {
+      "id": "R01",
+      "expected_review_required": true,
+      "reason": "Status escalated from supported to verified without new independent evidence.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "verified",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R02",
+      "expected_review_required": true,
+      "reason": "Self-asserted review upgrade is not independent verification.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": false,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R03",
+      "expected_review_required": true,
+      "reason": "Applicability is silently asserted matched after being unknown.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "unknown",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R04",
+      "expected_review_required": true,
+      "reason": "Stable evidence ID now points to a different artifact.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/other",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R05",
+      "expected_review_required": true,
+      "reason": "Open assumption is newly declared closed based only on record metadata.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "claimed_closed",
+                "closure_evidence_id": "E01"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R06",
+      "expected_review_required": true,
+      "reason": "Removing a previously open assumption should not be mistaken for verified closure.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "R07",
+      "expected_review_required": true,
+      "reason": "Same assumption ID is now attached to a materially different condition.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Unmeasured radiation effects now dominate failure.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R08",
+      "expected_review_required": true,
+      "reason": "Supporting citation title metadata changed while evidence identity remains fixed.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Another Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R09",
+      "expected_review_required": true,
+      "reason": "Claimed-closure support pointer changed without independent evaluation.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              },
+              {
+                "id": "E02",
+                "kind": "publication",
+                "locator": "synthetic://reference/two",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "claimed_closed",
+                "closure_evidence_id": "E01"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              },
+              {
+                "id": "E02",
+                "kind": "publication",
+                "locator": "synthetic://reference/two",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "claimed_closed",
+                "closure_evidence_id": "E02"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R10",
+      "expected_review_required": true,
+      "reason": "Withdrawal changes scope; it should be reviewed and never counted as validation.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "withdrawn",
+                "withdrawal_reason": "Claim narrowed for a toy example"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R11",
+      "expected_review_required": true,
+      "reason": "A new claim requires examination on its own terms.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          },
+          {
+            "id": "C02",
+            "statement": "A different toy device is reported to meet a test bound.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "R12",
+      "expected_review_required": true,
+      "reason": "A newly introduced open assumption should be disclosed to reviewers.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              },
+              {
+                "id": "A02",
+                "description": "A distinct secondary measurement remains untested.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R13",
+      "expected_review_required": true,
+      "reason": "New citation requires a fresh check of its identity and scope.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              },
+              {
+                "id": "E02",
+                "kind": "publication",
+                "locator": "synthetic://reference/two",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R14",
+      "expected_review_required": true,
+      "reason": "Review metadata has been downgraded, changing evidential support.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": false,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R15",
+      "expected_review_required": true,
+      "reason": "Applicability regressed from matched to unknown.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "unknown",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R16",
+      "expected_review_required": true,
+      "reason": "Qualitative assertion changes from one instrument to another; semantic check needed.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument B.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "N01",
+      "expected_review_required": false,
+      "reason": "Byte-identical record means no revision.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "N02",
+      "expected_review_required": false,
+      "reason": "Only citation ordering changes; no evidence identity or content changes.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              },
+              {
+                "id": "E02",
+                "kind": "publication",
+                "locator": "synthetic://reference/two",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E02",
+                "kind": "publication",
+                "locator": "synthetic://reference/two",
+                "reviewed": true,
+                "applicability": "matched"
+              },
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "N03",
+      "expected_review_required": false,
+      "reason": "Only assumption ordering changes; no content or outcome changes.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              },
+              {
+                "id": "A02",
+                "description": "A distinct secondary measurement remains untested.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A02",
+                "description": "A distinct secondary measurement remains untested.",
+                "after": "open"
+              },
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "N04",
+      "expected_review_required": false,
+      "reason": "Punctuation-only claim edit has no effect on the technical proposition.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A!",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "N05",
+      "expected_review_required": false,
+      "reason": "UI-only evidence color field changes, not research evidence.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                },
+                "render_color": "blue"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                },
+                "render_color": "green"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "N06",
+      "expected_review_required": false,
+      "reason": "Document display label changed; claim and evidence content unchanged.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ],
+        "display_name": "draft"
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ],
+        "display_name": "revision"
+      }
+    },
+    {
+      "id": "N07",
+      "expected_review_required": false,
+      "reason": "Top-level version number updated without material modifications.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ],
+        "document_version": "v1"
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ],
+        "document_version": "v2"
+      }
+    },
+    {
+      "id": "N08",
+      "expected_review_required": false,
+      "reason": "DOI case-only formatting does not identify a distinct DOI (known potential false alarm).",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/EXAMPLE",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "N09",
+      "expected_review_required": false,
+      "reason": "Claim author conservatively lowers asserted status; no new warrant is claimed.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "hypothesis",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "N10",
+      "expected_review_required": false,
+      "reason": "Spacing-only claim edit is not necessarily a change to the technical assertion.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy  controlled measurement supports effect in instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "R17",
+      "expected_review_required": true,
+      "reason": "Technical bound changes from 5.0 ns to 0.5 ns; numeric assertion demands fresh scrutiny.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy compute must finish below 5.0 ns.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy compute must finish below 0.5 ns.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "N11",
+      "expected_review_required": false,
+      "reason": "Only numeric formatting differs: 5.0 ns vs 5.00 ns.",
+      "before": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy compute must finish below 5.0 ns.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C01",
+            "statement": "Toy compute must finish below 5.00 ns.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E01",
+                "kind": "publication",
+                "locator": "synthetic://reference/one",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/example",
+                  "title": "Fictional Toy Article",
+                  "year": 2024
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A01",
+                "description": "Transfer to instrument B remains unmeasured.",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
