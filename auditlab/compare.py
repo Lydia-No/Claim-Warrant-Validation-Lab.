@@ -70,8 +70,14 @@ def compare(before: dict, after: dict) -> dict:
                 event("EVIDENCE_ID_REUSED_FOR_DIFFERENT_SOURCE", cid, evidence_id=eid)
             if not a["reviewed"] and b["reviewed"]:
                 event("REVIEW_STATUS_SELF_UPGRADED", cid, evidence_id=eid)
+            elif a["reviewed"] and not b["reviewed"]:
+                event("REVIEW_STATUS_DOWNGRADED", cid, evidence_id=eid)
             if a["applicability"] != "matched" and b["applicability"] == "matched":
                 event("APPLICABILITY_SELF_UPGRADED", cid, evidence_id=eid)
+            elif a["applicability"] == "matched" and b["applicability"] != "matched":
+                event("APPLICABILITY_REGRESSED", cid, evidence_id=eid)
+            if a.get("bibliography") != b.get("bibliography"):
+                event("BIBLIOGRAPHIC_METADATA_CHANGED", cid, evidence_id=eid)
 
         old_as, new_as = _map(old.get("assumptions", [])), _map(new.get("assumptions", []))
         for aid in sorted(old_as.keys() - new_as.keys()):
