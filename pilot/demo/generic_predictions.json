@@ -1,0 +1,29 @@
+{
+  "dataset": "INVENTED baseline answers for CLI smoke test; no LLM was called",
+  "predictions": [
+    {
+      "case_id": "DEMO-01",
+      "decision": "yes"
+    },
+    {
+      "case_id": "DEMO-02",
+      "decision": "no"
+    },
+    {
+      "case_id": "DEMO-03",
+      "decision": "yes"
+    },
+    {
+      "case_id": "DEMO-04",
+      "decision": "no"
+    },
+    {
+      "case_id": "DEMO-05",
+      "decision": "abstain"
+    },
+    {
+      "case_id": "DEMO-06",
+      "decision": "no"
+    }
+  ]
+}

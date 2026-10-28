@@ -1,0 +1,29 @@
+{
+  "dataset": "FICTIONAL reviewer B — NOT a human adjudication",
+  "ratings": [
+    {
+      "case_id": "DEMO-01",
+      "label": "yes"
+    },
+    {
+      "case_id": "DEMO-02",
+      "label": "no"
+    },
+    {
+      "case_id": "DEMO-03",
+      "label": "yes"
+    },
+    {
+      "case_id": "DEMO-04",
+      "label": "no"
+    },
+    {
+      "case_id": "DEMO-05",
+      "label": "uncertain"
+    },
+    {
+      "case_id": "DEMO-06",
+      "label": "uncertain"
+    }
+  ]
+}

@@ -10,12 +10,13 @@ This public demonstrator is **not** the private Research Claim Governance implem
 
 When a technical document fixes a weak citation or calculation, has the revision reduced its *unverified assumptions*, or merely replaced them with newer explanations and stronger labels?
 
-### What v0.3 can do
+### What v0.4 can do
 
 1. **Structural claim checks:** flag missing evidence, declared applicability mismatches, and unjustified "proven" labels (author-supplied metadata only).
 2. **Before/after comparison:** match stable IDs across snapshots; report added/removed claims, newly asserted closures, changed assumptions, relabeled evidence and status upgrades. Removed claims/assumptions are never counted as verified.
 3. **Synthetic revision challenge:** an openly labeled, 28-case regression suite compares snapshot-only checking, any-field diffs, and targeted structural review. It contains deliberately exposed false positives and false negatives and is not an independent benchmark.
-4. **Optional independent DOI metadata lookup:** explicitly opt in to querying Crossref's `/works/{doi}` endpoint. Compare the returned DOI, title, publication year and optional author, journal, volume, issue, pages against *declared bibliographic metadata*. This is **record identification**, not scientific verification.
+4. **External pilot toolkit (NOT yet executed):** a documented prospective protocol, equally informed generic-critic prompt, two-reviewer template and a local scorer that excludes disagreements and uncertainty rather than inventing negative labels. Demo reviewer ratings are fictional.
+5. **Optional independent DOI metadata lookup:** explicitly opt in to querying Crossref's `/works/{doi}` endpoint. Compare the returned DOI, title, publication year and optional author, journal, volume, issue, pages against *declared bibliographic metadata*. This is **record identification**, not scientific verification.
 
 **It does not** validate physical regimes, prove hardware timing or mathematical identities, verify standards compliance, detect all retractions, establish independence of reviewers, or justify any numeric assay reduction.
 
@@ -37,6 +38,9 @@ python -m auditlab --compare examples/synthetic_revision_before.json examples/sy
 # Open synthetic regression challenge (no network)
 python -m auditlab.benchmark
 python -m auditlab.benchmark --json
+
+# Exploratory pilot SCORER DEMO: all case data and reviewer ratings are invented
+python -m auditlab.pilot --cases pilot/demo/cases.json --reviewer-a pilot/demo/ratings_a.json --reviewer-b pilot/demo/ratings_b.json --generic pilot/demo/generic_predictions.json --json
 
 # Local automated checks (no network)
 python -m unittest discover -s tests -v
@@ -78,7 +82,7 @@ The DOI above is **only a placeholder**. `reviewed` and `applicability` are asse
 
 Stable claim/evidence/assumption IDs across snapshots are essential. Reusing an ID for new content is flagged. JSON content fingerprints support audit bookkeeping; they do not prove a file's external provenance.
 
-For the interpretation and limitations, see [protocol](docs/PROTOCOL.md), [synthetic challenge](benchmarks/revision_challenge/README.md) and [external trial](docs/EXTERNAL-TRIAL.md).
+For the interpretation and limitations, see [external pilot protocol](pilot/TRIAL-PROTOCOL.md), [pilot execution notes](pilot/README.md), [protocol](docs/PROTOCOL.md), [synthetic challenge](benchmarks/revision_challenge/README.md) and [external trial](docs/EXTERNAL-TRIAL.md).
 
 ## Privacy and external collaboration
 
@@ -88,6 +92,6 @@ The online Crossref option sends only DOI identifiers (not claim text, blueprint
 
 ## Status and intellectual property
 
-**v0.3: structural prototype with revision differencing, numeric-literal change warnings, an authored synthetic regression challenge, and opt-in Crossref bibliographic metadata lookup.** The synthetic regression cases and automated tests are software tests, not empirical validation of research findings. The tool does not implement, supersede or claim to validate the locked private Research Claim Governance Study 1.
+**v0.4: structural prototype with a prepared external pilot scoring procedure (NOT YET EXECUTED), paired revision diffing, authored synthetic regression challenge and opt-in Crossref bibliographic checks.** The synthetic regression cases and automated tests are software tests, not empirical validation of research findings. The tool does not implement, supersede or claim to validate the locked private Research Claim Governance Study 1.
 
 Copyright © 2026 Linda Thorstensen. No software license has been granted by this repository. Public visibility alone does not grant unrestricted rights to reproduce, redistribute or reuse the code. Licensing may be decided separately.

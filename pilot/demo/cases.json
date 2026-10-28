@@ -1,0 +1,337 @@
+{
+  "dataset": "SYNTHETIC DEMO ONLY — invented data; no real documents or external reviewers",
+  "cases": [
+    {
+      "case_id": "DEMO-01",
+      "domain": "synthetic demonstrator — fictional",
+      "before": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument A.",
+            "asserted_status": "verified",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "DEMO-02",
+      "domain": "synthetic demonstrator — fictional",
+      "before": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument A!",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "DEMO-03",
+      "domain": "synthetic demonstrator — fictional",
+      "before": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument B.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "DEMO-04",
+      "domain": "synthetic demonstrator — fictional",
+      "before": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched",
+                "bibliography": {
+                  "doi": "10.1234/DEMO"
+                }
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "DEMO-05",
+      "domain": "synthetic demonstrator — fictional",
+      "before": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              },
+              {
+                "id": "A-02",
+                "description": "Unexpected temperature dependencies",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "DEMO-06",
+      "domain": "synthetic demonstrator — fictional",
+      "before": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "C-01",
+            "statement": "A fictional test established bounded performance on instrument A.",
+            "asserted_status": "supported",
+            "evidence": [
+              {
+                "id": "E-01",
+                "kind": "experiment",
+                "locator": "synthetic://example/fictional-test",
+                "reviewed": true,
+                "applicability": "matched"
+              }
+            ],
+            "assumptions": [
+              {
+                "id": "A-01",
+                "description": "Transfer to instrument B is not independently assessed",
+                "after": "open"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
