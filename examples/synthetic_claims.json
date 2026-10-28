@@ -1,0 +1,68 @@
+{
+  "dataset": "SYNTHETIC ONLY — not Genesis Genome or real research",
+  "claims": [
+    {
+      "id": "EX-01",
+      "statement": "A symbolic toy identity is proven for the defined integer domain.",
+      "asserted_status": "proven",
+      "evidence": [
+        {
+          "id": "E-01",
+          "kind": "derivation",
+          "locator": "synthetic://toy-integer-identity",
+          "reviewed": true,
+          "applicability": "matched"
+        }
+      ],
+      "assumptions": [
+        {
+          "id": "A-01",
+          "description": "Toy identity has an exact algebraic derivation.",
+          "after": "claimed_closed",
+          "closure_evidence_id": "E-01"
+        }
+      ]
+    },
+    {
+      "id": "EX-02",
+      "statement": "A published toy laboratory result proves performance in an unrelated target environment.",
+      "asserted_status": "verified",
+      "evidence": [
+        {
+          "id": "E-02",
+          "kind": "publication",
+          "locator": "synthetic://fictional-paper",
+          "reviewed": true,
+          "applicability": "mismatch"
+        }
+      ],
+      "assumptions": [
+        {
+          "id": "A-02",
+          "description": "Cross-domain transfer is valid.",
+          "after": "claimed_closed",
+          "closure_evidence_id": "E-02"
+        }
+      ]
+    },
+    {
+      "id": "EX-03",
+      "statement": "An invented timing estimate meets the hardware budget.",
+      "asserted_status": "verified",
+      "evidence": [],
+      "assumptions": [
+        {
+          "id": "A-03",
+          "description": "Placed design meets required timing.",
+          "after": "open"
+        },
+        {
+          "id": "A-04",
+          "description": "Original unsupported claim removed from scope.",
+          "after": "withdrawn",
+          "withdrawal_reason": "Not enough evidence to retain the claim."
+        }
+      ]
+    }
+  ]
+}
