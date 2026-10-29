@@ -37,6 +37,20 @@ def source_revision_events(before_bundle: dict, after_bundle: dict) -> dict:
             raise ValueError("duplicate binding")
         return set(keys)
 
+    def origin_set(bundle):
+        origins = bundle.get("claim_origins", [])
+        if not isinstance(origins, list):
+            raise ValueError("claim_origins must be a list")
+        points = []
+        for origin in origins:
+            if not isinstance(origin, dict) or not isinstance(origin.get("claim_id"), str) or not isinstance(origin.get("anchor_id"), str):
+                raise ValueError("invalid claim origin")
+            points.append((origin["claim_id"], origin["anchor_id"]))
+        if len(set(points)) != len(points):
+            raise ValueError("duplicate claim origin")
+        return set(points)
+
+    old_origins, new_origins = origin_set(before_bundle), origin_set(after_bundle)
     before = binding_set(before_bundle)
     after = binding_set(after_bundle)
     events = []
@@ -52,6 +66,11 @@ def source_revision_events(before_bundle: dict, after_bundle: dict) -> dict:
     for aid in sorted(old_anchors.keys() & new_anchors.keys()):
         if old_anchors[aid] != new_anchors[aid]:
             event("ANCHOR_ID_REUSED_WITH_CHANGED_CONTENT", anchor_id=aid)
+
+    for cid, aid in sorted(new_origins - old_origins):
+        event("CLAIM_ORIGIN_LINK_ADDED_NOT_EVIDENCE", claim_id=cid, anchor_id=aid)
+    for cid, aid in sorted(old_origins - new_origins):
+        event("CLAIM_ORIGIN_LINK_REMOVED_NOT_RESOLVED", claim_id=cid, anchor_id=aid)
 
     for key in sorted(after - before):
         event("SOURCE_BINDING_ADDED_NOT_VERIFIED", claim_id=key[0],
