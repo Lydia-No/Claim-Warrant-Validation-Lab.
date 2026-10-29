@@ -82,6 +82,14 @@ class SourcePilotTests(unittest.TestCase):
         import json
         self.assertNotIn(self.text, json.dumps(self.verify()))
 
+    def test_source_origin_is_not_support(self):
+        self.bundle["claim_origins"] = [{"claim_id": "C1", "anchor_id": "A1"}]
+        report = self.verify()
+        self.assertEqual(report["claim_origins"][0]["status"],
+                         "CLAIM_ORIGIN_MATCH_NOT_EVIDENCE")
+        self.assertEqual(report["bindings"][0]["status"],
+                         "SOURCE_ANCHOR_MATCH_NOT_SEMANTIC_SUPPORT")
+
     def test_invalid_reviewer_label_rejected(self):
         report = self.verify()
         with self.assertRaises(ValueError):
