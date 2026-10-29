@@ -1,0 +1,61 @@
+{
+  "claims": [
+    {
+      "id": "S-CALC-001",
+      "statement": "In a synthetic example, the sum of two quantities is five.",
+      "asserted_status": "supported",
+      "required_evidence_scopes": [
+        "principle",
+        "performance"
+      ],
+      "depends_on": [],
+      "evidence": [
+        {
+          "id": "S-E-001",
+          "kind": "publication",
+          "locator": "synthetic://example",
+          "reviewed": false,
+          "applicability": "unknown",
+          "declared_support_scopes": [
+            "principle"
+          ],
+          "provenance": {
+            "source_id": "S-SOURCE-001",
+            "record_id": "S-RECORD-001"
+          }
+        }
+      ],
+      "assumptions": [
+        {
+          "id": "S-A-001",
+          "description": "The simplified example is relevant to the target setting.",
+          "after": "open"
+        }
+      ],
+      "arithmetic_checks": [
+        {
+          "id": "SUM-001",
+          "operation": "sum",
+          "values": [
+            2,
+            3
+          ],
+          "expected": 5
+        }
+      ]
+    },
+    {
+      "id": "S-DERIVED-002",
+      "statement": "A separate synthetic performance claim depends on the previous claim.",
+      "asserted_status": "hypothesis",
+      "depends_on": [
+        "S-CALC-001"
+      ],
+      "required_evidence_scopes": [
+        "implementation"
+      ],
+      "evidence": [],
+      "assumptions": []
+    }
+  ]
+}

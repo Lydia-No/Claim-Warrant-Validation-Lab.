@@ -8,3 +8,10 @@ __pycache__/
 *.pem
 *.key
 .DS_Store
+
+# Local-only inputs and output; not a substitute for checking staged files
+private/
+local_only/
+scratch/
+*.local.json
+*.local.md

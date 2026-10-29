@@ -13,6 +13,7 @@ jobs:
       - name: Run tests (offline, stdlib only)
         run: |
           python -m unittest discover -s tests -v
+          python -m auditlab.extensions --records examples/synthetic_extended.json > /dev/null
           python -m auditlab.benchmark
           python -m auditlab.pilot --cases pilot/demo/cases.json --reviewer-a pilot/demo/ratings_a.json --reviewer-b pilot/demo/ratings_b.json --generic pilot/demo/generic_predictions.json
           python -m auditlab.external_preflight
