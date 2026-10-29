@@ -1,0 +1,25 @@
+{
+  "claims": [
+    {
+      "id": "SYN-CLAIM-001",
+      "statement": "The illustrative note describes a basic addition.",
+      "asserted_status": "hypothesis",
+      "required_evidence_scopes": [
+        "principle"
+      ],
+      "evidence": [
+        {
+          "id": "SYN-EV-001",
+          "kind": "publication",
+          "locator": "synthetic://illustrative-note",
+          "reviewed": false,
+          "applicability": "unknown",
+          "declared_support_scopes": [
+            "principle"
+          ]
+        }
+      ],
+      "assumptions": []
+    }
+  ]
+}

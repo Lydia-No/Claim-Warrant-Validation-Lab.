@@ -1,0 +1,2 @@
+An illustrative note states that two units plus three units yield five units.
+It does not discuss hardware implementation or operating regimes.
