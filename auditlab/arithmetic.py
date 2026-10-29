@@ -1,9 +1,15 @@
 """Explicit numeric checks: arithmetic only, no theorem or hardware verification."""
-from decimal import Decimal, InvalidOperation
+from decimal import Decimal, InvalidOperation, localcontext
 from math import gcd
 
 
 def check_arithmetic(checks):
+    with localcontext() as ctx:
+        ctx.prec = 256
+        return _run_checks(checks)
+
+
+def _run_checks(checks):
     """Evaluate submitted numeric assertions without parsing free-form mathematics."""
     results = []
     for item in checks:
