@@ -104,6 +104,19 @@ Run the offline integrity preflight:
 python -m auditlab.external_preflight
 ```
 
+## Unblinded real-source diagnostic (not a benchmark)
+
+The nine source-pinned external paraphrases can now be passed through the **existing, unchanged** structural event rules without adding any human or assumed truth labels:
+
+```bash
+python -m auditlab.external_diagnostic
+python -m auditlab.external_diagnostic --json
+```
+
+A review flag indicates an edit the deterministic structural rules choose to surface—not that an error was proved. An unflagged wording change is **not** an independently confirmed safe revision. This diagnostic does **not** compute effectiveness scores. See [methodological threats](pilot/external_candidates/METHOD-THREAT-REVIEW.md) and [diagnostic usage](pilot/external_candidates/DIAGNOSTIC.md).
+
+The central research limitation remains: these real revisions have no independently constructed evidence-provenance trails or human reference ratings. Detecting public formula edits is not proof of detecting unsupported scientific claims.
+
 ## Privacy and external collaboration
 
 Everything committed here is synthetic or public documentation. Never commit unpublished third-party blueprints, private datasets, partner code, secrets, or any restricted ArcTopia work. If a partner wants to test the framework against their own proprietary documents, they can run it **locally** and share only a reviewed, sanitized report if they choose.
