@@ -12,6 +12,8 @@ from .compare import compare
 from .claim_extract import extract_file
 from .arithmetic import check_arithmetic
 from .warrants import assess_warrants
+from .source_bindings import verify_sources
+from .reviewer_panel import review_source_bindings
 
 
 def inspect_records(data):
@@ -60,8 +62,22 @@ def main():
     choice.add_argument("--extract-markdown", metavar="FILE")
     choice.add_argument("--records", metavar="JSON")
     choice.add_argument("--compare", nargs=2, metavar=("BEFORE", "AFTER"))
+    choice.add_argument("--source-check", nargs=3, metavar=("RECORDS", "BUNDLE", "ROOT"))
+    parser.add_argument("--ratings", metavar="LOCAL_JSON", help="Optional local reviewer ratings; valid only with --source-check")
     args = parser.parse_args()
-    if args.extract_markdown:
+    if args.ratings and not args.source_check:
+        parser.error("--ratings requires --source-check")
+    if args.source_check:
+        records, bundle_path, root = args.source_check
+        with open(bundle_path, encoding="utf-8") as stream:
+            bundle = json.load(stream)
+        report = verify_sources(load_records(records), bundle, root)
+        result = {"source_attestation": report}
+        if args.ratings:
+            with open(args.ratings, encoding="utf-8") as stream:
+                ratings = json.load(stream)
+            result["reviewer_opinions"] = review_source_bindings(report, ratings)
+    elif args.extract_markdown:
         result = {"candidate_index": extract_file(args.extract_markdown)}
     elif args.records:
         result = {"extended_audit": inspect_records(load_records(args.records))}
