@@ -160,3 +160,13 @@ python -m auditlab.extensions --extract-markdown /path/to/authorized/local.md
 ```
 
 Details: [local-first extensions](docs/LOCAL-FIRST-EXTENSIONS.md). Never place restricted inputs or their derived outputs in this public repository or any public GitHub branch.
+
+## Source-bound local pilot (offline; no scientific verification)
+
+A separate, opt-in experimental source-anchoring layer checks that **authorized local text files** match pinned SHA-256 digests and that an explicitly supplied quotation appears at specified line numbers. It can link an anchor to declared claim/evidence scope, record reviewer judgments without treating reviewer agreement as proof, and flag scope-widening or source changes across revisions. It does not read or interpret PDFs, validate scientific conclusions, or establish independence of external reviewers.
+
+```bash
+python -m auditlab.extensions --source-check examples/source_pilot/claims.json examples/source_pilot/bundle.json examples/source_pilot --ratings examples/source_pilot/ratings.json
+```
+
+See [source-bound pilot](docs/SOURCE-BOUND-PILOT.md) for source format, limitations and private-data handling. The synthetic test material is fictional. **Never include proprietary source files, extracted claim data or their results in this public repository.**
