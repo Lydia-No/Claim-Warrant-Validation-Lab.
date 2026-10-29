@@ -16,9 +16,12 @@ MAX_BYTES = 2_000_000
 
 
 def _entries(value, key):
+    caps = {"sources": 64, "anchors": 4000, "bindings": 8000}
+    if not isinstance(value, dict):
+        raise ValueError("bundle must be a dictionary")
     items = value.get(key)
-    if not isinstance(items, list) or len(items) > 10000:
-        raise ValueError(key + " must be a list of <=10000 entries")
+    if not isinstance(items, list) or len(items) > caps[key]:
+        raise ValueError(key + " exceeds allowed input limit")
     return items
 
 
@@ -74,7 +77,7 @@ def verify_sources(records: dict, bundle: dict, source_root: str | Path) -> dict
     anchors = _unique(_entries(bundle, "anchors"), "anchor_id")
     bindings = _entries(bundle, "bindings")
     claim_origins = bundle.get("claim_origins", [])
-    if not isinstance(claim_origins, list) or len(claim_origins) > 10000:
+    if not isinstance(claim_origins, list) or len(claim_origins) > 4000:
         raise ValueError("claim_origins must be a bounded list")
     claims = {c["id"]: c for c in records["claims"]}
     source_reports, anchor_reports, binding_reports = {}, {}, []
@@ -100,6 +103,7 @@ def verify_sources(records: dict, bundle: dict, source_root: str | Path) -> dict
                 status = "INVALID_LINE_ANCHOR"
         anchor_reports[aid] = {"source_id": sid, "line_start": start, "line_end": end, "status": status}
 
+    seen_bindings = set()
     for entry in bindings:
         if not isinstance(entry, dict):
             raise ValueError("binding must be a dictionary")
@@ -108,6 +112,10 @@ def verify_sources(records: dict, bundle: dict, source_root: str | Path) -> dict
             raise ValueError("binding IDs and scope must be nonempty strings")
         if scope not in SCOPES:
             raise ValueError("unknown evidence scope")
+        binding_key = (cid, eid, aid, scope)
+        if binding_key in seen_bindings:
+            raise ValueError("duplicate binding")
+        seen_bindings.add(binding_key)
         claim = claims.get(cid)
         ev = next((e for e in claim.get("evidence", []) if e["id"] == eid), None) if claim else None
         if ev is None:
@@ -116,6 +124,9 @@ def verify_sources(records: dict, bundle: dict, source_root: str | Path) -> dict
             status = "ANCHOR_NOT_FOUND"
         elif anchor_reports[aid]["status"] != "EXACT_QUOTE_MATCH":
             status = "ANCHOR_NOT_AUTHENTICATED"
+        elif (not isinstance(ev.get("declared_support_scopes", []), list)
+              or any(x not in SCOPES for x in ev.get("declared_support_scopes", []))):
+            status = "INVALID_EVIDENCE_SCOPE_METADATA"
         elif scope not in ev.get("declared_support_scopes", []):
             status = "SCOPE_NOT_DECLARED_FOR_EVIDENCE"
         else:
@@ -124,12 +135,16 @@ def verify_sources(records: dict, bundle: dict, source_root: str | Path) -> dict
                                 "anchor_id": aid, "scope": scope, "status": status})
 
     origin_reports = []
+    seen_origins = set()
     for entry in claim_origins:
         if not isinstance(entry, dict):
             raise ValueError("claim origin must be a dictionary")
         cid, aid = entry.get("claim_id"), entry.get("anchor_id")
         if not isinstance(cid, str) or not isinstance(aid, str) or not cid or not aid:
             raise ValueError("claim origin requires claim_id and anchor_id")
+        if (cid, aid) in seen_origins:
+            raise ValueError("duplicate claim origin")
+        seen_origins.add((cid, aid))
         if cid not in claims:
             status = "UNKNOWN_CLAIM"
         elif aid not in anchor_reports:
