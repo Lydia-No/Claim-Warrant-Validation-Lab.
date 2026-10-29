@@ -6,6 +6,7 @@ The public lab's next capability is an **offline, source-bound warrant trail**. 
 
 - A local UTF-8 text/Markdown/RST file's SHA-256 bytes match a supplied pin.
 - A quotation actually occurs within the stated line range of those bytes.
+- An optional `claim_origins` entry identifies where an author wrote a claim, **not** where it was independently supported.
 - An explicitly provided claim/evidence/scope/anchor link references a real claim and declared evidence scope.
 - Two or more *declared* reviewers agree, disagree, or remain uncertain on a source-anchored claim.
 - Before/after revision differences reveal reused anchors, altered source digests, removed/added bindings, and broadened support scope attached to unchanged anchors.
@@ -17,7 +18,7 @@ The user alone controls any non-public input and its output. Do not upload or co
 ## Local inputs
 
 - `claims.json`: the existing auditlab record format. Optional evidence `declared_support_scopes` in `principle`, `method`, `implementation`, `performance`.
-- `bundle.json`: `sources` with `source_id,path,sha256`; `anchors` with `anchor_id,source_id,line_start,line_end,quote`; `bindings` with `claim_id,evidence_id,anchor_id,scope`.
+- `bundle.json`: optional `claim_origins` with `claim_id,anchor_id` (author-text provenance only); `sources` with `source_id,path,sha256`; `anchors` with `anchor_id,source_id,line_start,line_end,quote`; `bindings` with `claim_id,evidence_id,anchor_id,scope`.
 - `ratings.json` (optional): `ratings`, each with the binding's four IDs, `reviewer_id`, `verdict` (`supports`, `does_not_support`, `uncertain`), and nonempty `rationale`.
 
 Only plain-text sources are supported. External PDFs must first be lawfully converted into authorized local source text, with transformation provenance documented separately. Reference passage exact matching operates on local text only.
