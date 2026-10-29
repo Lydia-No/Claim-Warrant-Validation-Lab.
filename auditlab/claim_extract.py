@@ -22,7 +22,7 @@ def extract_claim_candidates(text):
             continue
         for tag in dict.fromkeys(TAG.findall(line)):
             found.setdefault(tag, []).append(line_no)
-    return {"candidate_only": True, "claims": found}
+    return {"candidate_only": True, "candidate_count": len(found), "claims": found}
 
 
 def extract_file(path):
