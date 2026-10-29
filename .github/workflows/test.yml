@@ -18,3 +18,4 @@ jobs:
           python -m auditlab.external_preflight
           python -m auditlab.external_diagnostic
           python -m auditlab.evidence_chains
+          python -m auditlab.readiness

@@ -1,0 +1,90 @@
+{
+  "schema_version": "0.1",
+  "study": "Public historical evidence-chain feasibility gate, separate from private Research Claim Governance study",
+  "independence_notice": "This metadata was authored by the project toolmaker, not by independent domain specialists. Do not treat it as reviewer adjudication.",
+  "expected_candidate_count": 3,
+  "criteria": [
+    {
+      "id": "dated_source_inventory",
+      "meaning": "Dated, attributable source records are present in the public dossier (not a check of source truth).",
+      "required_for_comparative_test": true
+    },
+    {
+      "id": "chronology_and_source_ids",
+      "meaning": "Stage/source/assumption links pass mechanical temporal-integrity checks (not historical verification).",
+      "required_for_comparative_test": true
+    },
+    {
+      "id": "evidence_actually_used_verified",
+      "meaning": "Independent evidence establishes which sources/analyses were used for each inference, not merely cited after the fact.",
+      "required_for_comparative_test": true
+    },
+    {
+      "id": "source_support_independently_checked",
+      "meaning": "Qualified independent source reviewer inspected primary methods/results and checked claim-to-evidence applicability.",
+      "required_for_comparative_test": true
+    },
+    {
+      "id": "same_terminal_comparator",
+      "meaning": "A defensible paired comparison holds the relevant final observation/evidence presentation fixed while independently substantiating the distinct histories.",
+      "required_for_comparative_test": true
+    },
+    {
+      "id": "independent_reference_ratings",
+      "meaning": "At least two independent adjudicators have provided sealed determinate or uncertainty ratings without seeing tool outputs.",
+      "required_for_comparative_test": true
+    },
+    {
+      "id": "equal_information_generic_baseline",
+      "meaning": "A fixed generic full-history comparator was run with equivalent permitted evidence and a recorded model/prompt/budget.",
+      "required_for_comparative_test": true
+    }
+  ],
+  "status_values": [
+    "documented_in_record",
+    "not_established"
+  ],
+  "cases": [
+    {
+      "case_id": "DEBT-2010-2013",
+      "statuses": {
+        "dated_source_inventory": "documented_in_record",
+        "chronology_and_source_ids": "documented_in_record",
+        "evidence_actually_used_verified": "not_established",
+        "source_support_independently_checked": "not_established",
+        "same_terminal_comparator": "not_established",
+        "independent_reference_ratings": "not_established",
+        "equal_information_generic_baseline": "not_established"
+      },
+      "scope_note": "The 2010, 2013 critique and authors' reply are different data/analysis states; this is not a held-fixed terminal evidence pair. Original spreadsheets were not independently rerun."
+    },
+    {
+      "case_id": "BICEP2-2014-2015",
+      "statuses": {
+        "dated_source_inventory": "documented_in_record",
+        "chronology_and_source_ids": "documented_in_record",
+        "evidence_actually_used_verified": "not_established",
+        "source_support_independently_checked": "not_established",
+        "same_terminal_comparator": "not_established",
+        "independent_reference_ratings": "not_established",
+        "equal_information_generic_baseline": "not_established"
+      },
+      "scope_note": "Multi-frequency foreground data changed the evidential state; observing the same polarization power is not equivalent to having an unchanged complete evidential summary."
+    },
+    {
+      "case_id": "OPERA-2011-2012",
+      "statuses": {
+        "dated_source_inventory": "documented_in_record",
+        "chronology_and_source_ids": "documented_in_record",
+        "evidence_actually_used_verified": "not_established",
+        "source_support_independently_checked": "not_established",
+        "same_terminal_comparator": "not_established",
+        "independent_reference_ratings": "not_established",
+        "equal_information_generic_baseline": "not_established"
+      },
+      "scope_note": "Instrument correction and independent remeasurement changed calibration and observations; treating the final 'compatible with light-speed' wording as an identical terminal evidence state would be unjustified."
+    }
+  ],
+  "provenance": "Curation/readiness metadata, not independently reviewed human labels",
+  "note": "Machine-checked metadata can establish referential consistency, not source-level scientific warrant."
+}

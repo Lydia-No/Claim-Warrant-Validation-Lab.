@@ -127,6 +127,17 @@ To move beyond formula-edit detection, three public historical **evidence-change
 
 See [evidence chain dossiers](pilot/evidence_chains/README.md) and [methodological decision](pilot/evidence_chains/METHOD-DECISION.md). Their **source/time linkage** can be checked with `python -m auditlab.evidence_chains`. This does **not** check source truth, reproduce raw experiments or award scientific claim entitlement, and does not create an unbiased test cohort.
 
+## Scientific readiness and originality gate — 2026
+
+A **fail-closed readiness gate** now checks whether the three historical source-linked correction narratives can actually support a same-terminal-evidence, independent comparative study. **They cannot yet.** The tool checks source chronology and dossier structure, not scientific validity. It explicitly refuses to treat self-marked statuses as independent source verification.
+
+```bash
+python -m auditlab.readiness
+python -m auditlab.readiness --json
+```
+
+See [readiness assessment](pilot/evidence_chains/READINESS-RESULT.md), [machine-readable evidence gap ledger](pilot/evidence_chains/ELIGIBILITY-LEDGER.json) and the [updated 2026 prior-art check](pilot/evidence_chains/PRIOR-ART-2026.md). Related 2026 literature already studies agentic forking paths, evidence chains and correct-value/wrong-source semantic binding. No originality or comparative accuracy claim has been established for this public lab.
+
 ## Privacy and external collaboration
 
 Everything committed here is synthetic or public documentation. Never commit unpublished third-party blueprints, private datasets, partner code, secrets, or any restricted ArcTopia work. If a partner wants to test the framework against their own proprietary documents, they can run it **locally** and share only a reviewed, sanitized report if they choose.
