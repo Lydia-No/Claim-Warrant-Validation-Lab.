@@ -5,7 +5,7 @@ from math import gcd
 
 def check_arithmetic(checks):
     with localcontext() as ctx:
-        ctx.prec = 256
+        ctx.prec = 5000
         return _run_checks(checks)
 
 
@@ -41,10 +41,15 @@ def _run_checks(checks):
                         calculated *= n
                 elif op == "difference" and len(numbers) == 2:
                     calculated = numbers[0] - numbers[1]
+                elif op == "clock_ns" and len(numbers) == 2 and numbers[0] >= 0 and numbers[1] > 0:
+                    calculated = numbers[0] * Decimal(1000) / numbers[1]
                 else:
                     raise ValueError("unsupported operation")
                 expected = Decimal(str(item["expected"]))
-                passed = calculated == expected
+                tolerance = Decimal(str(item.get("tolerance_ns", "0"))) if op == "clock_ns" else Decimal(0)
+                if tolerance < 0 or not tolerance.is_finite():
+                    raise ValueError("invalid tolerance")
+                passed = abs(calculated - expected) <= tolerance
                 calculated = str(calculated)
             results.append({"id": cid, "operation": op, "status": "match" if passed else "mismatch",
                             "computed": calculated, "arithmetic_only": True})
