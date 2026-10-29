@@ -90,6 +90,20 @@ A first, **retrospectively selected, unblinded** list of 10 actual upstream tech
 
 **This is candidate discovery, not an external study result.** The selection was enriched for previously reported errors, no claim-level extraction has been locked, no independent reviewers have rated anything, and no external method comparison has been run. The source files remain in their upstream projects.
 
+## Real upstream document extracts — unblinded feasibility
+
+Nine of the ten public SciPy/PyTorch revision candidates have been converted into **source-pinned, AI-assisted, claim-level BEFORE/AFTER paraphrases**, following a rule documented in a separate GitHub commit **before the extraction records were committed**. One implementation-only change remains explicitly excluded from this textual-claim pilot; it has not been discarded.
+
+See the [extraction ledger](pilot/external_candidates/SELECTION-LEDGER.json), [immutable source-pinned pairs](pilot/external_candidates/EXTRACTED-PAIRS.json), [extraction rule](pilot/external_candidates/EXTRACTION-RULE.md) and [input preflight checks](auditlab/external_preflight.py).
+
+**Not independent validation.** The source revisions were selected and interpreted with knowledge of upstream correction discussions. Claim paraphrases, empty evidence lists and neutral API-status placeholders are **not** verified external evidence. No human reviewer ratings or equal-information generic-critic comparisons have yet been performed.
+
+Run the offline integrity preflight:
+
+```bash
+python -m auditlab.external_preflight
+```
+
 ## Privacy and external collaboration
 
 Everything committed here is synthetic or public documentation. Never commit unpublished third-party blueprints, private datasets, partner code, secrets, or any restricted ArcTopia work. If a partner wants to test the framework against their own proprietary documents, they can run it **locally** and share only a reviewed, sanitized report if they choose.

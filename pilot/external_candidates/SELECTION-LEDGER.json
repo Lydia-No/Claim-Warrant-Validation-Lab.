@@ -1,0 +1,70 @@
+{
+  "status": "UNBLINDED FEASIBILITY SELECTION; ZERO SCIENTIFIC OUTCOME LABELS",
+  "candidate_register_at_commit": "cb5dcf25a8eb3147744708d9f4a8a2568f389beb",
+  "selection_rule_at_commit": "0c384e871a65ffa10e6917e472dc5b9fdd81b6ae",
+  "total_candidates": 10,
+  "included": 9,
+  "excluded": 1,
+  "entries": [
+    {
+      "case_id": "SCIPY-17922",
+      "treatment": "include_claim_pair",
+      "source_url": "https://github.com/scipy/scipy/pull/17922",
+      "reason": "Single selected source-text equation, asserted equivalence, formula bound, or formatting control."
+    },
+    {
+      "case_id": "SCIPY-24110",
+      "treatment": "include_claim_pair",
+      "source_url": "https://github.com/scipy/scipy/pull/24110",
+      "reason": "Single selected source-text equation, asserted equivalence, formula bound, or formatting control."
+    },
+    {
+      "case_id": "SCIPY-24480",
+      "treatment": "include_claim_pair",
+      "source_url": "https://github.com/scipy/scipy/pull/24480",
+      "reason": "Single selected source-text equation, asserted equivalence, formula bound, or formatting control."
+    },
+    {
+      "case_id": "SCIPY-22579",
+      "treatment": "include_claim_pair",
+      "source_url": "https://github.com/scipy/scipy/pull/22579",
+      "reason": "Single selected source-text equation, asserted equivalence, formula bound, or formatting control."
+    },
+    {
+      "case_id": "SCIPY-24518",
+      "treatment": "include_claim_pair",
+      "source_url": "https://github.com/scipy/scipy/pull/24518",
+      "reason": "Single selected source-text equation, asserted equivalence, formula bound, or formatting control."
+    },
+    {
+      "case_id": "PYTORCH-7383",
+      "treatment": "include_claim_pair",
+      "source_url": "https://github.com/pytorch/pytorch/pull/7383",
+      "reason": "Single selected source-text equation, asserted equivalence, formula bound, or formatting control."
+    },
+    {
+      "case_id": "PYTORCH-5679",
+      "treatment": "include_claim_pair",
+      "source_url": "https://github.com/pytorch/pytorch/pull/5679",
+      "reason": "Single selected source-text equation, asserted equivalence, formula bound, or formatting control."
+    },
+    {
+      "case_id": "PYTORCH-1921",
+      "treatment": "include_claim_pair",
+      "source_url": "https://github.com/pytorch/pytorch/pull/1921",
+      "reason": "Single selected source-text equation, asserted equivalence, formula bound, or formatting control."
+    },
+    {
+      "case_id": "PYTORCH-134704",
+      "treatment": "include_claim_pair",
+      "source_url": "https://github.com/pytorch/pytorch/pull/134704",
+      "reason": "Single selected source-text equation, asserted equivalence, formula bound, or formatting control."
+    },
+    {
+      "case_id": "PYTORCH-66397",
+      "treatment": "exclude_textual_claim_study",
+      "source_url": "https://github.com/pytorch/pytorch/pull/66397",
+      "reason": "Changes C++ return-value shape, not an explicit paired textual assertion in the selected path. Candidate retained for a separate implementation-behavior study."
+    }
+  ]
+}

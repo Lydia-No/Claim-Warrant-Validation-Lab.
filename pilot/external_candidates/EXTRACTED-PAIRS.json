@@ -1,0 +1,430 @@
+{
+  "status": "REAL OPEN-SOURCE REVISIONS; AI-ASSISTED PARAPHRASES; NO HUMAN RATINGS OR VERIFIED TRUTH",
+  "selection_rule_at_commit": "0c384e871a65ffa10e6917e472dc5b9fdd81b6ae",
+  "data_access": "public immutable upstream source file references; source code not copied",
+  "placeholder": "asserted_status=hypothesis is schema compatibility only, not an upstream author claim",
+  "meaning_of_empty_evidence": "Not extracted or assessed; does not mean actual evidence is absent",
+  "cases": [
+    {
+      "case_id": "SCIPY-17922",
+      "phase": "UNBLINDED_EXTERNAL_SOURCE_EXTRACTION_NOT_RATED",
+      "source": {
+        "repository": "scipy/scipy",
+        "pr_number": 17922,
+        "pr_url": "https://github.com/scipy/scipy/pull/17922",
+        "path": "scipy/signal/_filter_design.py",
+        "before_ref": "8cafae63755594c690a7171a714e36554dc81499",
+        "after_ref": "4790628432e8b38ef49b54710c98ae675d822544",
+        "before_url": "https://github.com/scipy/scipy/blob/8cafae63755594c690a7171a714e36554dc81499/scipy/signal/_filter_design.py",
+        "after_url": "https://github.com/scipy/scipy/blob/4790628432e8b38ef49b54710c98ae675d822544/scipy/signal/_filter_design.py",
+        "selected_hunk": "first bilinear docstring hunk near line 2095"
+      },
+      "unit": "Bilinear Tustin substitution",
+      "curation_change_type": "formula changed",
+      "extraction": {
+        "paraphrase_by": "AI-assisted coordinator, not an independent reviewer",
+        "source_meaning_confirmed_independently": false,
+        "scientific_truth_assessed": false,
+        "evidence_not_extracted_cannot_mean_no_support": true,
+        "uncertainty": "Do not count the duplicate bilinear_zpk hunk separately; no code behavior is verified."
+      },
+      "before": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The documented bilinear transform substitutes (z-1)/(z+1) for s.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The documented bilinear transform substitutes 2*fs*(z-1)/(z+1) for s.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "SCIPY-24110",
+      "phase": "UNBLINDED_EXTERNAL_SOURCE_EXTRACTION_NOT_RATED",
+      "source": {
+        "repository": "scipy/scipy",
+        "pr_number": 24110,
+        "pr_url": "https://github.com/scipy/scipy/pull/24110",
+        "path": "scipy/special/_special_ufuncs_docs.cpp",
+        "before_ref": "26ec6086340844fd1d8787fcc048eafd22bb0a52",
+        "after_ref": "633b82d5545a94a5d271e690d5ef883b2d96a78a",
+        "before_url": "https://github.com/scipy/scipy/blob/26ec6086340844fd1d8787fcc048eafd22bb0a52/scipy/special/_special_ufuncs_docs.cpp",
+        "after_url": "https://github.com/scipy/scipy/blob/633b82d5545a94a5d271e690d5ef883b2d96a78a/scipy/special/_special_ufuncs_docs.cpp",
+        "selected_hunk": "airy docstring first Ai identity near line 442"
+      },
+      "unit": "Airy Ai modified-Bessel prefactor",
+      "curation_change_type": "formula changed",
+      "extraction": {
+        "paraphrase_by": "AI-assisted coordinator, not an independent reviewer",
+        "source_meaning_confirmed_independently": false,
+        "scientific_truth_assessed": false,
+        "evidence_not_extracted_cannot_mean_no_support": true,
+        "uncertainty": "Other Airy formula and rendering edits are not part of this unit; domain and complex branches unverified."
+      },
+      "before": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The documented Ai(z) relation uses K_(1/3)(t) multiplied by 1/(pi*sqrt(3)).",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The documented Ai(z) relation uses K_(1/3)(t) multiplied by sqrt(z/3)/pi.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "SCIPY-24480",
+      "phase": "UNBLINDED_EXTERNAL_SOURCE_EXTRACTION_NOT_RATED",
+      "source": {
+        "repository": "scipy/scipy",
+        "pr_number": 24480,
+        "pr_url": "https://github.com/scipy/scipy/pull/24480",
+        "path": "doc/source/tutorial/stats/discrete_nhypergeom.rst",
+        "before_ref": "c20e957d3c05b7632d582aac912ac1832ae25d8e",
+        "after_ref": "2d1442db077fb170e78c48baf51f3a2e0e0391aa",
+        "before_url": "https://github.com/scipy/scipy/blob/c20e957d3c05b7632d582aac912ac1832ae25d8e/doc/source/tutorial/stats/discrete_nhypergeom.rst",
+        "after_url": "https://github.com/scipy/scipy/blob/2d1442db077fb170e78c48baf51f3a2e0e0391aa/doc/source/tutorial/stats/discrete_nhypergeom.rst",
+        "selected_hunk": "PMF support formula near line 10"
+      },
+      "unit": "Negative-hypergeometric tutorial bound",
+      "curation_change_type": "bound changed",
+      "extraction": {
+        "paraphrase_by": "AI-assisted coordinator, not an independent reviewer",
+        "source_meaning_confirmed_independently": false,
+        "scientific_truth_assessed": false,
+        "evidence_not_extracted_cannot_mean_no_support": true,
+        "uncertainty": "Complete mathematical support under all parameter conventions is not independently assessed."
+      },
+      "before": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The tutorial states a support bound of 0 <= k <= M-n.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The tutorial states a support bound of 0 <= k <= n.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "SCIPY-22579",
+      "phase": "UNBLINDED_EXTERNAL_SOURCE_EXTRACTION_NOT_RATED",
+      "source": {
+        "repository": "scipy/scipy",
+        "pr_number": 22579,
+        "pr_url": "https://github.com/scipy/scipy/pull/22579",
+        "path": "scipy/signal/_signaltools.py",
+        "before_ref": "b88b480836ae4f7c36f85bc4e36aa43452ab84bc",
+        "after_ref": "cea714d74ec578be07484dbb2ecfc2eb8178fcbb",
+        "before_url": "https://github.com/scipy/scipy/blob/b88b480836ae4f7c36f85bc4e36aa43452ab84bc/scipy/signal/_signaltools.py",
+        "after_url": "https://github.com/scipy/scipy/blob/cea714d74ec578be07484dbb2ecfc2eb8178fcbb/scipy/signal/_signaltools.py",
+        "selected_hunk": "correlate docstring summation near line 175"
+      },
+      "unit": "One-dimensional correlate indexing",
+      "curation_change_type": "notation/indexing changed",
+      "extraction": {
+        "paraphrase_by": "AI-assisted coordinator, not an independent reviewer",
+        "source_meaning_confirmed_independently": false,
+        "scientific_truth_assessed": false,
+        "evidence_not_extracted_cannot_mean_no_support": true,
+        "uncertainty": "The two forms could be reindexings of mathematically equivalent operations; no correctness label assigned."
+      },
+      "before": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The correlation description uses a shifted y index involving k and N, with output k beginning at 0.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The correlation description uses y at index l-k, with output k from -(M-1) through N-1.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "SCIPY-24518",
+      "phase": "UNBLINDED_EXTERNAL_SOURCE_EXTRACTION_NOT_RATED",
+      "source": {
+        "repository": "scipy/scipy",
+        "pr_number": 24518,
+        "pr_url": "https://github.com/scipy/scipy/pull/24518",
+        "path": "scipy/spatial/transform/_rotation.py",
+        "before_ref": "c5e11ad6f79123f310d0ce4be4474c47870235e7",
+        "after_ref": "c2e88270285f50f76099f4c602bed07a84bdf267",
+        "before_url": "https://github.com/scipy/scipy/blob/c5e11ad6f79123f310d0ce4be4474c47870235e7/scipy/spatial/transform/_rotation.py",
+        "after_url": "https://github.com/scipy/scipy/blob/c2e88270285f50f76099f4c602bed07a84bdf267/scipy/spatial/transform/_rotation.py",
+        "selected_hunk": "Rotation.apply hunk near 1586"
+      },
+      "unit": "New single-rotation equivalence",
+      "curation_change_type": "added assertion",
+      "extraction": {
+        "paraphrase_by": "AI-assisted coordinator, not an independent reviewer",
+        "source_meaning_confirmed_independently": false,
+        "scientific_truth_assessed": false,
+        "evidence_not_extracted_cannot_mean_no_support": true,
+        "uncertainty": "The row-vector equivalence is additional, not a replacement of original assertion."
+      },
+      "before": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The documented rotation equals multiplying matrix R by column-oriented vectors and dropping the final axis.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The documented rotation equals multiplying matrix R by column-oriented vectors and dropping the final axis.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          },
+          {
+            "id": "CLM-02",
+            "statement": "For a single rotation, multiplying row-oriented vectors by R transposed is stated to yield the same result.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PYTORCH-7383",
+      "phase": "UNBLINDED_EXTERNAL_SOURCE_EXTRACTION_NOT_RATED",
+      "source": {
+        "repository": "pytorch/pytorch",
+        "pr_number": 7383,
+        "pr_url": "https://github.com/pytorch/pytorch/pull/7383",
+        "path": "torch/nn/modules/loss.py",
+        "before_ref": "e3935f750967350f77792cf6bdbd89ff1c9b2547",
+        "after_ref": "755d3105b6f61bf3834461fc3bc5bb77bd76a813",
+        "before_url": "https://github.com/pytorch/pytorch/blob/e3935f750967350f77792cf6bdbd89ff1c9b2547/torch/nn/modules/loss.py",
+        "after_url": "https://github.com/pytorch/pytorch/blob/755d3105b6f61bf3834461fc3bc5bb77bd76a813/torch/nn/modules/loss.py",
+        "selected_hunk": "loss function math hunk near 912"
+      },
+      "unit": "MultiMarginLoss sign",
+      "curation_change_type": "formula changed",
+      "extraction": {
+        "paraphrase_by": "AI-assisted coordinator, not an independent reviewer",
+        "source_meaning_confirmed_independently": false,
+        "scientific_truth_assessed": false,
+        "evidence_not_extracted_cannot_mean_no_support": true,
+        "uncertainty": "No statement about the correctness of actual implementation or independently executed tests."
+      },
+      "before": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The MultiMarginLoss documentation has the competitor term margin - x[y] - x[i].",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The MultiMarginLoss documentation has the competitor term margin - x[y] + x[i].",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PYTORCH-5679",
+      "phase": "UNBLINDED_EXTERNAL_SOURCE_EXTRACTION_NOT_RATED",
+      "source": {
+        "repository": "pytorch/pytorch",
+        "pr_number": 5679,
+        "pr_url": "https://github.com/pytorch/pytorch/pull/5679",
+        "path": "torch/nn/modules/activation.py",
+        "before_ref": "7391dae7097d9ecf983110f79caad0ed492efea0",
+        "after_ref": "50770f0bc4d9e107a9c7a37f45ff5b197aa83650",
+        "before_url": "https://github.com/pytorch/pytorch/blob/7391dae7097d9ecf983110f79caad0ed492efea0/torch/nn/modules/activation.py",
+        "after_url": "https://github.com/pytorch/pytorch/blob/50770f0bc4d9e107a9c7a37f45ff5b197aa83650/torch/nn/modules/activation.py",
+        "selected_hunk": "Hardshrink hunk near 394 inserts a closing LaTeX cases delimiter"
+      },
+      "unit": "Hardshrink piecewise function",
+      "curation_change_type": "rendering-only control",
+      "extraction": {
+        "paraphrase_by": "AI-assisted coordinator, not an independent reviewer",
+        "source_meaning_confirmed_independently": false,
+        "scientific_truth_assessed": false,
+        "evidence_not_extracted_cannot_mean_no_support": true,
+        "uncertainty": "The correction closes a LaTeX cases environment, not a change in the mathematical mapping."
+      },
+      "before": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "Hardshrink maps x to x beyond the positive or negative threshold and otherwise maps to zero.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "Hardshrink maps x to x beyond the positive or negative threshold and otherwise maps to zero.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PYTORCH-1921",
+      "phase": "UNBLINDED_EXTERNAL_SOURCE_EXTRACTION_NOT_RATED",
+      "source": {
+        "repository": "pytorch/pytorch",
+        "pr_number": 1921,
+        "pr_url": "https://github.com/pytorch/pytorch/pull/1921",
+        "path": "torch/nn/modules/rnn.py",
+        "before_ref": "08648061f7690f6fad817677006b7159978db08d",
+        "after_ref": "b5e1df046e6c1a025c1339d61bccd2cd8aa127c4",
+        "before_url": "https://github.com/pytorch/pytorch/blob/08648061f7690f6fad817677006b7159978db08d/torch/nn/modules/rnn.py",
+        "after_url": "https://github.com/pytorch/pytorch/blob/b5e1df046e6c1a025c1339d61bccd2cd8aa127c4/torch/nn/modules/rnn.py",
+        "selected_hunk": "GRU reset gate line near 285; other hunks excluded"
+      },
+      "unit": "GRU reset-gate recurrent weight",
+      "curation_change_type": "symbol changed",
+      "extraction": {
+        "paraphrase_by": "AI-assisted coordinator, not an independent reviewer",
+        "source_meaning_confirmed_independently": false,
+        "scientific_truth_assessed": false,
+        "evidence_not_extracted_cannot_mean_no_support": true,
+        "uncertainty": "This pull request contains other RNN changes; only the reset-gate line is the extraction unit."
+      },
+      "before": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The GRU reset-gate recurrence is written with a hidden-state weight named W_hi.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The GRU reset-gate recurrence is written with a hidden-state weight named W_hr.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "PYTORCH-134704",
+      "phase": "UNBLINDED_EXTERNAL_SOURCE_EXTRACTION_NOT_RATED",
+      "source": {
+        "repository": "pytorch/pytorch",
+        "pr_number": 134704,
+        "pr_url": "https://github.com/pytorch/pytorch/pull/134704",
+        "path": "torch/signal/windows/windows.py",
+        "before_ref": "38b96d3399a695e704ed39b60dac733c3fbf20e2",
+        "after_ref": "79c88679b9f0bf92ea0eaff774bf7a304dc52369",
+        "before_url": "https://github.com/pytorch/pytorch/blob/38b96d3399a695e704ed39b60dac733c3fbf20e2/torch/signal/windows/windows.py",
+        "after_url": "https://github.com/pytorch/pytorch/blob/79c88679b9f0bf92ea0eaff774bf7a304dc52369/torch/signal/windows/windows.py",
+        "selected_hunk": "Nuttall docstring z_n formatting near 749"
+      },
+      "unit": "Nuttall window parameter display",
+      "curation_change_type": "rendering-only control",
+      "extraction": {
+        "paraphrase_by": "AI-assisted coordinator, not an independent reviewer",
+        "source_meaning_confirmed_independently": false,
+        "scientific_truth_assessed": false,
+        "evidence_not_extracted_cannot_mean_no_support": true,
+        "uncertainty": "The patch changes math markup, not the printed algebraic relation."
+      },
+      "before": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The auxiliary variable z_n is defined by the ratio 2*pi*n/M.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      },
+      "after": {
+        "claims": [
+          {
+            "id": "CLM-01",
+            "statement": "The auxiliary variable z_n is defined by the ratio 2*pi*n/M.",
+            "asserted_status": "hypothesis",
+            "evidence": [],
+            "assumptions": []
+          }
+        ]
+      }
+    }
+  ]
+}

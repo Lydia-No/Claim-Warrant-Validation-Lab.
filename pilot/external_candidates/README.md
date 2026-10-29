@@ -42,3 +42,11 @@ Everything in this folder is bibliographic metadata, technical paths, commit ide
 - Independent human reviewer ratings: **0**
 - Generic critic predictions on real external cases: **0**
 - Valid external comparative effectiveness findings: **0**
+
+## Claim-level preparation status
+
+The [fixed extraction procedure](EXTRACTION-RULE.md) is recorded at commit `0c384e871a65ffa10e6917e472dc5b9fdd81b6ae`. It was written **after examining PR diffs** (unblinded). The subsequent [9 paired paraphrases](EXTRACTED-PAIRS.json) and [complete 10-item selection ledger](SELECTION-LEDGER.json) are inspectable, but neither independent scientific validation nor human rating.
+
+`python -m auditlab.external_preflight` checks ID and source-ref consistency, neutral status, and absence of fabricated evidence/ratings. It **does not** check whether the paraphrases faithfully reproduce the full upstream mathematics.
+
+The implementation-only C++ shape change was retained as an exclusion, not rewritten as a documentation statement. The formatting-only edits are preserved as unchanged-meaning controls. No changed formula has been labelled correct or incorrect by an independent reviewer.

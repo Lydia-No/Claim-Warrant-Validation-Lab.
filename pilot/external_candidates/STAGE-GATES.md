@@ -1,13 +1,16 @@
-# Stage gates — public external feasibility
+# Public source-pinned extraction stage gates
 
-| Stage | Status | Meaning |
+**Important:** This is a deliberately unblinded retrospective feasibility cohort, not prospective pre-registration or external method validation.
+
+| Stage | Status | Evidence |
 |---|---|---|
-| Verified public version pointers | COMPLETE | 10 public merged-PR changes, both immutable versions accessible |
-| Candidate-specific extraction rule | WRITTEN AFTER INSPECTION | Frozen for this public feasibility cohort; **not prospective preregistration** |
-| Claim-level BEFORE / AFTER JSON | PENDING | Need direct comparison against immutable upstream diffs |
-| Independent source-transcription verification | NOT STARTED | Requires reviewer with domain skills |
-| Independent rating A / B | NOT STARTED | Two different humans must inspect actual sources |
-| Full-history generic critic | NOT RUN | Must have same material / fixed prompt |
-| External comparative result | **NONE** | No significance, originality or superiority conclusion |
+| Ten public upstream candidate revisions located | COMPLETE | `CANDIDATES.json` at `cb5dcf25a8eb3147744708d9f4a8a2568f389beb` |
+| Extraction and exclusion rule declared | COMPLETE, UNBLINDED | `EXTRACTION-RULE.md`, commit `0c384e871a65ffa10e6917e472dc5b9fdd81b6ae` |
+| Nine source-pinned claim paraphrase pairs drafted | **AI-ASSISTED, NOT INDEPENDENTLY VERIFIED** | `EXTRACTED-PAIRS.json` |
+| One implementation-only candidate excluded with rationale | COMPLETE | `SELECTION-LEDGER.json` |
+| Source meaning, mathematics and evidence independently checked | **NOT STARTED** | Qualified external reviewer required |
+| Two independent source-review ratings | **NOT STARTED** | Reviewer A/B must inspect underlying sources |
+| Generic critic with equal evidence and complete history | **NOT RUN** | No actual model predictions |
+| External comparative reliability/performance result | **NONE** | Cannot claim scientific superiority |
 
-No unpublished external source data, private notes, restricted methods or collaborator materials are present.
+Original source files are linked at immutable commit references and not copied. The source selection was based on known bugfix PRs; downstream results from this cohort would be **exploratory and selection-biased** even if independent adjudication is later performed. Use a new independently selected cohort for confirmatory testing.
