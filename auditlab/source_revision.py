@@ -58,6 +58,15 @@ def source_revision_events(before_bundle: dict, after_bundle: dict) -> dict:
     def event(code, **details):
         events.append({"code": code, **details})
 
+    for sid in sorted(new_sources.keys() - old_sources.keys()):
+        event("SOURCE_RECORD_ADDED_NOT_VERIFIED", source_id=sid)
+    for sid in sorted(old_sources.keys() - new_sources.keys()):
+        event("SOURCE_RECORD_REMOVED_NOT_RESOLVED", source_id=sid)
+    for aid in sorted(new_anchors.keys() - old_anchors.keys()):
+        event("ANCHOR_ADDED_NOT_VERIFIED", anchor_id=aid)
+    for aid in sorted(old_anchors.keys() - new_anchors.keys()):
+        event("ANCHOR_REMOVED_NOT_RESOLVED", anchor_id=aid)
+
     for sid in sorted(old_sources.keys() & new_sources.keys()):
         if old_sources[sid].get("sha256") != new_sources[sid].get("sha256"):
             event("SOURCE_DIGEST_CHANGED_RECHECK_REQUIRED", source_id=sid)
