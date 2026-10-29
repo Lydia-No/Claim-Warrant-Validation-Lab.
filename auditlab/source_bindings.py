@@ -73,6 +73,9 @@ def verify_sources(records: dict, bundle: dict, source_root: str | Path) -> dict
     sources = _unique(_entries(bundle, "sources"), "source_id")
     anchors = _unique(_entries(bundle, "anchors"), "anchor_id")
     bindings = _entries(bundle, "bindings")
+    claim_origins = bundle.get("claim_origins", [])
+    if not isinstance(claim_origins, list) or len(claim_origins) > 10000:
+        raise ValueError("claim_origins must be a bounded list")
     claims = {c["id"]: c for c in records["claims"]}
     source_reports, anchor_reports, binding_reports = {}, {}, []
     text_by_source = {}
@@ -120,10 +123,27 @@ def verify_sources(records: dict, bundle: dict, source_root: str | Path) -> dict
         binding_reports.append({"claim_id": cid, "evidence_id": eid,
                                 "anchor_id": aid, "scope": scope, "status": status})
 
+    origin_reports = []
+    for entry in claim_origins:
+        if not isinstance(entry, dict):
+            raise ValueError("claim origin must be a dictionary")
+        cid, aid = entry.get("claim_id"), entry.get("anchor_id")
+        if not isinstance(cid, str) or not isinstance(aid, str) or not cid or not aid:
+            raise ValueError("claim origin requires claim_id and anchor_id")
+        if cid not in claims:
+            status = "UNKNOWN_CLAIM"
+        elif aid not in anchor_reports:
+            status = "ANCHOR_NOT_FOUND"
+        elif anchor_reports[aid]["status"] != "EXACT_QUOTE_MATCH":
+            status = "ORIGIN_ANCHOR_NOT_AUTHENTICATED"
+        else:
+            status = "CLAIM_ORIGIN_MATCH_NOT_EVIDENCE"
+        origin_reports.append({"claim_id": cid, "anchor_id": aid, "status": status})
+
     return {
         "limit": "Local bytes and literal excerpts only; no independent scientific support",
         "no_scientific_verification": True,
         "sources": source_reports, "anchors": anchor_reports,
-        "bindings": binding_reports,
+        "bindings": binding_reports, "claim_origins": origin_reports,
         "verified_empirical_reduction": None,
     }
