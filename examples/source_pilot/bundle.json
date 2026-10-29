@@ -22,5 +22,11 @@
       "anchor_id": "SYN-ANCHOR-001",
       "scope": "principle"
     }
+  ],
+  "claim_origins": [
+    {
+      "claim_id": "SYN-CLAIM-001",
+      "anchor_id": "SYN-ANCHOR-001"
+    }
   ]
 }
