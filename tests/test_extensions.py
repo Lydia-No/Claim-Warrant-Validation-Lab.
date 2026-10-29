@@ -95,6 +95,18 @@ class ExtensionTests(unittest.TestCase):
         r = check_arithmetic([{"id": "X", "operation": "eval", "values": [3, 4], "expected": 12}])
         self.assertEqual(r["results"][0]["status"], "not_evaluated")
 
+    def test_clock_conversion_is_literal_arithmetic_only(self):
+        r = check_arithmetic([{"id": "CLOCK", "operation": "clock_ns",
+            "values": [3, 200], "expected": "15"}])
+        self.assertEqual(r["results"][0]["status"], "match")
+        self.assertTrue(r["results"][0]["arithmetic_only"])
+
+    def test_large_integer_product_is_exact(self):
+        n = 10 ** 60 + 7
+        r = check_arithmetic([{"id": "BIG", "operation": "product",
+            "values": [n, n], "expected": str(n * n)}])
+        self.assertEqual(r["results"][0]["status"], "match")
+
     def test_coprime_pairs(self):
         r = check_arithmetic([{"id": "X", "operation": "pairwise_coprime",
                                "values": [5, 8, 9], "expected": True}])
