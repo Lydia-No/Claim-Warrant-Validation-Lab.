@@ -14,6 +14,7 @@ from .arithmetic import check_arithmetic
 from .warrants import assess_warrants
 from .source_bindings import verify_sources
 from .reviewer_panel import review_source_bindings
+from .source_revision import source_revision_events
 
 
 def inspect_records(data):
@@ -63,11 +64,26 @@ def main():
     choice.add_argument("--records", metavar="JSON")
     choice.add_argument("--compare", nargs=2, metavar=("BEFORE", "AFTER"))
     choice.add_argument("--source-check", nargs=3, metavar=("RECORDS", "BUNDLE", "ROOT"))
+    choice.add_argument("--source-compare", nargs=5,
+        metavar=("BEFORE_RECORDS", "BEFORE_BUNDLE", "AFTER_RECORDS", "AFTER_BUNDLE", "ROOT"))
     parser.add_argument("--ratings", metavar="LOCAL_JSON", help="Optional local reviewer ratings; valid only with --source-check")
     args = parser.parse_args()
     if args.ratings and not args.source_check:
         parser.error("--ratings requires --source-check")
-    if args.source_check:
+    if args.source_compare:
+        old_record, old_bundle, new_record, new_bundle, root = args.source_compare
+        with open(old_bundle, encoding="utf-8") as stream:
+            old_sources = json.load(stream)
+        with open(new_bundle, encoding="utf-8") as stream:
+            new_sources = json.load(stream)
+        before, after = load_records(old_record), load_records(new_record)
+        result = {
+            "revision": compare(before, after),
+            "source_binding_changes": source_revision_events(old_sources, new_sources),
+            "before_sources": verify_sources(before, old_sources, root),
+            "after_sources": verify_sources(after, new_sources, root),
+        }
+    elif args.source_check:
         records, bundle_path, root = args.source_check
         with open(bundle_path, encoding="utf-8") as stream:
             bundle = json.load(stream)
