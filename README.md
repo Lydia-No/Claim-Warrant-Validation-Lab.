@@ -149,3 +149,14 @@ The online Crossref option sends only DOI identifiers (not claim text, blueprint
 **v0.4: structural prototype with a prepared external pilot scoring procedure (NOT YET EXECUTED), paired revision diffing, authored synthetic regression challenge and opt-in Crossref bibliographic checks.** The synthetic regression cases and automated tests are software tests, not empirical validation of research findings. The tool does not implement, supersede or claim to validate the locked private Research Claim Governance Study 1.
 
 Copyright © 2026 Linda Thorstensen. No software license has been granted by this repository. Public visibility alone does not grant unrestricted rights to reproduce, redistribute or reuse the code. Licensing may be decided separately.
+
+## Optional local-first structural extensions (experimental)
+
+A separate offline CLI provides **literal claim-ID indexing**, explicit **evidence-support scope review**, **dependency review**, **provenance-field integrity checks**, and **submitted-literal arithmetic checks**. These features do **not** establish scientific truth, assess external papers, or certify engineering results. They use only author-supplied metadata and require independent adjudication. The existing CLI, pilot and baseline remain unchanged.
+
+```bash
+python -m auditlab.extensions --records examples/synthetic_extended.json
+python -m auditlab.extensions --extract-markdown /path/to/authorized/local.md
+```
+
+Details: [local-first extensions](docs/LOCAL-FIRST-EXTENSIONS.md). Never place restricted inputs or their derived outputs in this public repository or any public GitHub branch.
