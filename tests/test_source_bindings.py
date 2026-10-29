@@ -5,6 +5,8 @@ from pathlib import Path
 
 from auditlab.source_bindings import verify_sources
 from auditlab.reviewer_panel import review_source_bindings
+from auditlab.source_revision import source_revision_events
+import copy
 
 
 class SourcePilotTests(unittest.TestCase):
@@ -60,6 +62,25 @@ class SourcePilotTests(unittest.TestCase):
         self.assertEqual(report["binding_assessments"][0]["status"],
                          "REVIEWERS_REPORT_SUPPORT_NOT_VERIFIED")
         self.assertFalse(report["binding_assessments"][0]["independently_verified"])
+
+    def test_source_binding_scope_drift_flagged(self):
+        previous = copy.deepcopy(self.bundle)
+        updated = copy.deepcopy(self.bundle)
+        updated["bindings"].append({"claim_id": "C1", "evidence_id": "E1",
+                                    "anchor_id": "A1", "scope": "performance"})
+        codes = [x["code"] for x in source_revision_events(previous, updated)["events"]]
+        self.assertIn("SOURCE_BINDING_ADDED_NOT_VERIFIED", codes)
+        self.assertIn("SCOPE_BROADENED_SAME_ANCHOR_REVIEW", codes)
+
+    def test_changed_quote_under_reused_id_flagged(self):
+        updated = copy.deepcopy(self.bundle)
+        updated["anchors"][0]["quote"] = "a different claim"
+        codes = [x["code"] for x in source_revision_events(self.bundle, updated)["events"]]
+        self.assertIn("ANCHOR_ID_REUSED_WITH_CHANGED_CONTENT", codes)
+
+    def test_no_private_source_text_echoed(self):
+        import json
+        self.assertNotIn(self.text, json.dumps(self.verify()))
 
     def test_invalid_reviewer_label_rejected(self):
         report = self.verify()
