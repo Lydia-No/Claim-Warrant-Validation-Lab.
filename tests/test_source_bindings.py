@@ -90,6 +90,19 @@ class SourcePilotTests(unittest.TestCase):
         self.assertEqual(report["bindings"][0]["status"],
                          "SOURCE_ANCHOR_MATCH_NOT_SEMANTIC_SUPPORT")
 
+    def test_untrusted_relative_parent_location_rejected(self):
+        self.bundle["sources"][0]["path"] = "../note.txt"
+        self.assertEqual(self.verify()["sources"]["S1"]["status"], "SOURCE_PATH_REJECTED")
+
+    def test_two_reviewers_disagree(self):
+        def rating(reviewer_id, verdict):
+            return {"claim_id": "C1", "evidence_id": "E1", "anchor_id": "A1",
+                    "scope": "principle", "reviewer_id": reviewer_id,
+                    "verdict": verdict, "rationale": "Independent opinion is not verified"}
+        result = review_source_bindings(self.verify(), {"ratings": [
+            rating("A", "supports"), rating("B", "does_not_support")]})
+        self.assertEqual(result["binding_assessments"][0]["status"], "REVIEWER_DISAGREEMENT")
+
     def test_invalid_reviewer_label_rejected(self):
         report = self.verify()
         with self.assertRaises(ValueError):
