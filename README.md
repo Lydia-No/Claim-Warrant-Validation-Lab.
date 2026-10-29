@@ -117,6 +117,16 @@ A review flag indicates an edit the deterministic structural rules choose to sur
 
 The central research limitation remains: these real revisions have no independently constructed evidence-provenance trails or human reference ratings. Detecting public formula edits is not proof of detecting unsupported scientific claims.
 
+## Historical evidence chains — source-backed discovery, not independent findings
+
+To move beyond formula-edit detection, three public historical **evidence-change cases** now include 10 dated claim stages, 10 source records and 11 explicit open questions across economics, observational cosmology and particle-physics metrology:
+
+- Reinhart–Rogoff debt/growth replication and erratum (2010–2013).
+- BICEP2/Keck–Planck foreground re-analysis (2014–2015).
+- OPERA neutrino timing and instrumental reassessment (2011–2012).
+
+See [evidence chain dossiers](pilot/evidence_chains/README.md) and [methodological decision](pilot/evidence_chains/METHOD-DECISION.md). Their **source/time linkage** can be checked with `python -m auditlab.evidence_chains`. This does **not** check source truth, reproduce raw experiments or award scientific claim entitlement, and does not create an unbiased test cohort.
+
 ## Privacy and external collaboration
 
 Everything committed here is synthetic or public documentation. Never commit unpublished third-party blueprints, private datasets, partner code, secrets, or any restricted ArcTopia work. If a partner wants to test the framework against their own proprietary documents, they can run it **locally** and share only a reviewed, sanitized report if they choose.

@@ -1,0 +1,335 @@
+{
+  "dataset": "EVIDENCE CHAIN DISCOVERY: source-grounded historical candidate dossiers; NOT blinded, not an independent adjudication, no performance claims",
+  "status": "public pilot research; source accounts reviewed, primary data/equations not independently reproduced",
+  "as_of": "2026-10-29",
+  "permitted_scope": "links and original concise paraphrases only; no copied full source documents or private IP",
+  "cases": [
+    {
+      "case_id": "DEBT-2010-2013",
+      "domain": "macroeconomics",
+      "framing": "Documentary trajectory of a debt–growth descriptive claim and methodological correction; contested interpretation, not a causal threshold proof",
+      "evidence": [
+        {
+          "id": "DEBT-E1",
+          "date": "2010-05-01",
+          "date_precision": "month",
+          "type": "original_research",
+          "organization": "Reinhart and Rogoff",
+          "url": "https://rogoff.scholars.harvard.edu/publications/growth-time-debt",
+          "summary": "Original 2010 paper describes associations between public-debt ratios and growth; debt categories include above 90%."
+        },
+        {
+          "id": "DEBT-E2",
+          "date": "2013-04-15",
+          "date_precision": "day",
+          "type": "external_replication_and_critique",
+          "organization": "Herndon, Ash and Pollin / PERI UMass",
+          "url": "https://peri.umass.edu/publication/does-high-public-debt-consistently-stifle-economic-growth-a-critique-of-reinhart-and-rogoff/",
+          "summary": "Replication critique identifies coding omission, data exclusions and weighting differences; reports a 2.2% postwar high-debt mean under its methods instead of original -0.1%."
+        },
+        {
+          "id": "DEBT-E3",
+          "date": "2013-05-05",
+          "date_precision": "day",
+          "type": "authors_erratum",
+          "organization": "Reinhart and Rogoff",
+          "url": "https://carmenreinhart.com/wp-content/uploads/2020/02/36_data.pdf",
+          "summary": "Authors acknowledge and analyze spreadsheet coding correction and discuss exclusions, weighting and alternative growth series; their response disputes some of the critics' broader reading."
+        }
+      ],
+      "assumptions": [
+        {
+          "id": "DEBT-A1",
+          "question": "Were the intended country observations included in every relevant calculation?"
+        },
+        {
+          "id": "DEBT-A2",
+          "question": "Are the selected country-year samples and country-level weighting suitable for the precise aggregate inference?"
+        },
+        {
+          "id": "DEBT-A3",
+          "question": "Can a descriptive high-debt association be interpreted as a universal or causal 90% threshold?"
+        },
+        {
+          "id": "DEBT-A4",
+          "question": "Do alternate national historical series materially alter specific summary statistics?"
+        }
+      ],
+      "stages": [
+        {
+          "id": "DEBT-S1",
+          "as_of": "2010-05-01",
+          "claim": "The 2010 article reported markedly lower average growth in its very-high-debt group, within its selected historical datasets.",
+          "claim_kind": "historical_author_report",
+          "source_ids": [
+            "DEBT-E1"
+          ],
+          "active_assumption_ids": [
+            "DEBT-A1",
+            "DEBT-A2",
+            "DEBT-A3"
+          ],
+          "observation": "This is a characterization of the published claim, not a certification of its calculations."
+        },
+        {
+          "id": "DEBT-S2",
+          "as_of": "2013-04-15",
+          "claim": "A documented replication challenged the reported postwar summary and its implied sharp threshold, citing coding, sample and weighting choices.",
+          "claim_kind": "external_challenge",
+          "source_ids": [
+            "DEBT-E1",
+            "DEBT-E2"
+          ],
+          "active_assumption_ids": [
+            "DEBT-A1",
+            "DEBT-A2",
+            "DEBT-A3"
+          ],
+          "observation": "2.2% is the critics' reported recalculation, not a newly independently reproduced number."
+        },
+        {
+          "id": "DEBT-S3",
+          "as_of": "2013-05-05",
+          "claim": "The authors issued an erratum acknowledging a coding error and discussing changes; whether a general causal debt threshold follows remains separate from the spreadsheet correction.",
+          "claim_kind": "corrected_and_contested",
+          "source_ids": [
+            "DEBT-E1",
+            "DEBT-E2",
+            "DEBT-E3"
+          ],
+          "active_assumption_ids": [
+            "DEBT-A2",
+            "DEBT-A3",
+            "DEBT-A4"
+          ],
+          "observation": "Correction of a range error does not establish weighting choices, causal direction or cross-country generality."
+        }
+      ],
+      "residual_question": "Which specific corrected descriptive estimates reproduce under a declared weighting/sample convention, and what additional causal identification (if any) supports a debt threshold?",
+      "limits": "Original spreadsheet and reconstruction scripts were not executed here. The erratum and replication describe distinct statistics and periods; do not mix the two sets of estimates."
+    },
+    {
+      "case_id": "BICEP2-2014-2015",
+      "domain": "observational cosmology",
+      "framing": "A measured polarization signal remained, while an initially promoted primordial-wave attribution was narrowed by foreground-sensitive evidence.",
+      "evidence": [
+        {
+          "id": "BICEP-E1",
+          "date": "2014-06-19",
+          "date_precision": "day",
+          "type": "original_research",
+          "organization": "BICEP2 Collaboration",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24996078/",
+          "summary": "Published B-mode polarization measurement with a tensor interpretation conditioned on modeled Galactic foregrounds."
+        },
+        {
+          "id": "BICEP-E2",
+          "date": "2014-08-18",
+          "date_precision": "day",
+          "type": "independent_critical_analysis",
+          "organization": "Flauger, Hill and Spergel",
+          "url": "https://doi.org/10.1088/1475-7516/2014/08/039",
+          "summary": "Independent analysis finds that significant polarized dust can explain observed B-mode power; dust amplitude and attribution were not independently resolved by original frequency data."
+        },
+        {
+          "id": "BICEP-E3",
+          "date": "2015-03-09",
+          "date_precision": "day",
+          "type": "joint_multi_instrument_analysis",
+          "organization": "BICEP2/Keck and Planck Collaborations",
+          "url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.114.101301",
+          "summary": "Joint multi-frequency fit supports a significant dust component and gives no statistically significant evidence for primordial tensor modes; r_0.05<0.12 (95% CI) in their analysis."
+        }
+      ],
+      "assumptions": [
+        {
+          "id": "BICEP-A1",
+          "question": "Could polarized Galactic dust materially contribute to the observed B-mode excess?"
+        },
+        {
+          "id": "BICEP-A2",
+          "question": "Are available observing frequencies adequate to disentangle dust and primordial tensor signals?"
+        },
+        {
+          "id": "BICEP-A3",
+          "question": "Does a constrained upper bound imply tensor amplitude is exactly zero?"
+        }
+      ],
+      "stages": [
+        {
+          "id": "BICEP-S1",
+          "as_of": "2014-06-19",
+          "claim": "BICEP2 reported a B-mode excess and advanced an interpretation favoring primordial gravitational waves.",
+          "claim_kind": "reported_measurement_and_attribution",
+          "source_ids": [
+            "BICEP-E1"
+          ],
+          "active_assumption_ids": [
+            "BICEP-A1",
+            "BICEP-A2"
+          ],
+          "observation": "The observation and its astrophysical attribution are distinct claims."
+        },
+        {
+          "id": "BICEP-S2",
+          "as_of": "2014-08-18",
+          "claim": "An independent foreground analysis showed the observed pattern could also arise from dust, leaving attribution underdetermined by the available data.",
+          "claim_kind": "external_alternative",
+          "source_ids": [
+            "BICEP-E1",
+            "BICEP-E2"
+          ],
+          "active_assumption_ids": [
+            "BICEP-A1",
+            "BICEP-A2"
+          ],
+          "observation": "A viable foreground alternative is not itself a measurement that the tensor contribution must be zero."
+        },
+        {
+          "id": "BICEP-S3",
+          "as_of": "2015-03-09",
+          "claim": "The joint BICEP2/Keck–Planck analysis reported strong dust evidence and no statistically significant tensor detection, replacing direct-attribution claims with an upper limit.",
+          "claim_kind": "revised_bounded_inference",
+          "source_ids": [
+            "BICEP-E1",
+            "BICEP-E2",
+            "BICEP-E3"
+          ],
+          "active_assumption_ids": [
+            "BICEP-A3"
+          ],
+          "observation": "The later result qualifies the prior attribution; it does not erase the measured polarization signal."
+        }
+      ],
+      "residual_question": "What remains inferable about primordial tensor amplitude under model, frequency and foreground assumptions, apart from a non-detection at the quoted significance?",
+      "limits": "We reviewed abstracts/institutional accounts, not raw sky maps, full likelihoods or detailed foreground nuisance priors; no independent parameter fitting performed."
+    },
+    {
+      "case_id": "OPERA-2011-2012",
+      "domain": "particle physics metrology",
+      "framing": "An anomalous time-of-flight estimate and successive timing-chain investigations, followed by a calibrated and independently cross-checked measurement.",
+      "evidence": [
+        {
+          "id": "OPERA-E1",
+          "date": "2011-09-23",
+          "date_precision": "day",
+          "type": "original_anomaly_announcement",
+          "organization": "CERN / OPERA",
+          "url": "https://home.cern/opera-experiment-reports-anomaly-in-flight-time-of-neutrinos-from-cern-to-gran-sasso/",
+          "summary": "2011 CERN release reports anomalous neutrino flight times and explicitly requests independent scrutiny."
+        },
+        {
+          "id": "OPERA-E2",
+          "date": "2012-02-23",
+          "date_precision": "day",
+          "type": "instrument_fault_investigation",
+          "organization": "CERN / OPERA",
+          "url": "https://home.cern/opera-experiment-reports-anomaly-in-flight-time-of-neutrinos-from-cern-to-gran-sasso/",
+          "summary": "February update reports two potentially counteracting timing-chain effects: synchronization oscillator and optical-fiber connector; effects then required further tests."
+        },
+        {
+          "id": "OPERA-E3",
+          "date": "2012-06-08",
+          "date_precision": "day",
+          "type": "cross_experiment_check",
+          "organization": "CERN report of OPERA, ICARUS, LVD, Borexino",
+          "url": "https://home.cern/opera-experiment-reports-anomaly-in-flight-time-of-neutrinos-from-cern-to-gran-sasso/",
+          "summary": "Four Gran Sasso experiments' measurements are described as consistent with light-speed time of flight; original anomaly attributed to timing-system fault."
+        },
+        {
+          "id": "OPERA-E4",
+          "date": "2012-12-06",
+          "date_precision": "day",
+          "type": "dedicated_measurement",
+          "organization": "OPERA Collaboration",
+          "url": "https://arxiv.org/abs/1212.1276",
+          "summary": "The later dedicated short-bunch measurement used improved and partly independent timing and reported results consistent with light speed within stated statistical and systematic uncertainty."
+        }
+      ],
+      "assumptions": [
+        {
+          "id": "OPERA-A1",
+          "question": "Were calibration, GPS synchronization and fiber transmission delays correctly measured at the time of the original run?"
+        },
+        {
+          "id": "OPERA-A2",
+          "question": "How did oscillator drift and connector malfunction interact, including possible opposite shifts?"
+        },
+        {
+          "id": "OPERA-A3",
+          "question": "Could independent detector timing and other experiments reproduce the original superluminal excess?"
+        },
+        {
+          "id": "OPERA-A4",
+          "question": "Does consistency within measurement uncertainty entail mathematically exact equality of neutrino and light speed?"
+        }
+      ],
+      "stages": [
+        {
+          "id": "OPERA-S1",
+          "as_of": "2011-09-23",
+          "claim": "OPERA reported an anomalous apparent neutrino time of flight, while the instrumental explanation remained open.",
+          "claim_kind": "instrument_anomaly_under_scrutiny",
+          "source_ids": [
+            "OPERA-E1"
+          ],
+          "active_assumption_ids": [
+            "OPERA-A1",
+            "OPERA-A2",
+            "OPERA-A3"
+          ],
+          "observation": "An anomaly report is not a verified claim that relativity had been overturned."
+        },
+        {
+          "id": "OPERA-S2",
+          "as_of": "2012-02-23",
+          "claim": "Two plausible timing-chain faults were identified with potentially opposite effects; additional measurement remained necessary.",
+          "claim_kind": "identified_alternative_mechanisms",
+          "source_ids": [
+            "OPERA-E1",
+            "OPERA-E2"
+          ],
+          "active_assumption_ids": [
+            "OPERA-A1",
+            "OPERA-A2",
+            "OPERA-A3"
+          ],
+          "observation": "The initial fault hypothesis was provisional, not itself the final calibrated result."
+        },
+        {
+          "id": "OPERA-S3",
+          "as_of": "2012-06-08",
+          "claim": "CERN reported that multiple independent experiments measured neutrino time of flight compatible with light speed and attributed the original excess to a timing-system fault.",
+          "claim_kind": "multi_experiment_reassessment",
+          "source_ids": [
+            "OPERA-E1",
+            "OPERA-E2",
+            "OPERA-E3"
+          ],
+          "active_assumption_ids": [
+            "OPERA-A4"
+          ],
+          "observation": "Independent agreement and fault diagnosis narrow the anomalous finding; exact equality is not a measurement claim."
+        },
+        {
+          "id": "OPERA-S4",
+          "as_of": "2012-12-06",
+          "claim": "OPERA's dedicated timing remeasurement gave flight times compatible with the speed of light within stated uncertainties.",
+          "claim_kind": "recalibrated_measurement",
+          "source_ids": [
+            "OPERA-E1",
+            "OPERA-E2",
+            "OPERA-E3",
+            "OPERA-E4"
+          ],
+          "active_assumption_ids": [
+            "OPERA-A4"
+          ],
+          "observation": "New apparatus/timing checks do not imply zero remaining uncertainty."
+        }
+      ],
+      "residual_question": "How much of the original inference depended on the timing chain, and what independent time-of-flight bounds can legitimately be inferred after recalibration?",
+      "limits": "CERN's historical 2011 announcement URL contains subsequent dated updates, not an immutable original snapshot. The timing apparatus and raw event stream were not reproduced."
+    }
+  ]
+}
