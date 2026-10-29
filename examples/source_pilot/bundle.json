@@ -1,0 +1,26 @@
+{
+  "sources": [
+    {
+      "source_id": "SYN-SOURCE-001",
+      "path": "example_note.txt",
+      "sha256": "c497c8a53ffb1f9285633c2dacd49ea0abe23c2d977792302213df7ce318dfde"
+    }
+  ],
+  "anchors": [
+    {
+      "anchor_id": "SYN-ANCHOR-001",
+      "source_id": "SYN-SOURCE-001",
+      "line_start": 1,
+      "line_end": 1,
+      "quote": "two units plus three units yield five units"
+    }
+  ],
+  "bindings": [
+    {
+      "claim_id": "SYN-CLAIM-001",
+      "evidence_id": "SYN-EV-001",
+      "anchor_id": "SYN-ANCHOR-001",
+      "scope": "principle"
+    }
+  ]
+}
