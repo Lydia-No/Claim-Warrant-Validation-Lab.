@@ -8,7 +8,7 @@ These opt-in Python-standard-library tools extend the public sandbox without cha
 - Source and claim metadata are author-supplied, even when a field says `reviewed: true` or `applicability: matched`.
 - No external services or network access are used by these extension commands.
 - The claim identifier index only extracts literal `[CLAIM-...]` tags and local line numbers (excluding fenced Markdown code); it does not understand the claims or infer evidence.
-- The arithmetic checker only computes explicitly supplied literal sums, products, differences, and pairwise coprimality. A matching result is **not** formal proof or engineering verification.
+- The arithmetic checker only computes explicitly supplied literal sums, products, differences, pairwise coprimality, and explicitly provided clock cycles / MHz to nanoseconds. A matching result is **not** formal proof or engineering verification.
 - Dependency flags indicate possible downstream review requirements, not scientific falsity or causal certainty.
 - Evidence scope labels are exact declarations: `principle`, `method`, `implementation`, `performance`. A paper supporting a principle is **not** automatically considered evidence of implementation or performance.
 - Provenance fields are bookkeeping assertions, **not** independently authenticated custody.
