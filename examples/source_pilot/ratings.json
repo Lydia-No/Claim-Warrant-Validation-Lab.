@@ -1,0 +1,22 @@
+{
+  "ratings": [
+    {
+      "claim_id": "SYN-CLAIM-001",
+      "evidence_id": "SYN-EV-001",
+      "anchor_id": "SYN-ANCHOR-001",
+      "scope": "principle",
+      "reviewer_id": "SYN-REVIEWER-A",
+      "verdict": "supports",
+      "rationale": "Illustrative author supplied judgment, not independent truth."
+    },
+    {
+      "claim_id": "SYN-CLAIM-001",
+      "evidence_id": "SYN-EV-001",
+      "anchor_id": "SYN-ANCHOR-001",
+      "scope": "principle",
+      "reviewer_id": "SYN-REVIEWER-B",
+      "verdict": "supports",
+      "rationale": "Fictional reviewer agreement only."
+    }
+  ]
+}
