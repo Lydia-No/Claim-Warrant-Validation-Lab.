@@ -14,6 +14,8 @@ jobs:
         run: |
           python -m unittest discover -s tests -v
           python -m auditlab.extensions --records examples/synthetic_extended.json > /dev/null
+          python -m auditlab.extensions --source-check examples/source_pilot/claims.json examples/source_pilot/bundle.json examples/source_pilot --ratings examples/source_pilot/ratings.json > /dev/null
+          python -m auditlab.extensions --source-compare examples/source_pilot/claims.json examples/source_pilot/bundle.json examples/source_pilot/claims.json examples/source_pilot/bundle.json examples/source_pilot > /dev/null
           python -m auditlab.benchmark
           python -m auditlab.pilot --cases pilot/demo/cases.json --reviewer-a pilot/demo/ratings_a.json --reviewer-b pilot/demo/ratings_b.json --generic pilot/demo/generic_predictions.json
           python -m auditlab.external_preflight
