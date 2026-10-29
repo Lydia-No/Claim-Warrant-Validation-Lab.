@@ -19,7 +19,7 @@ def specimen():
          ], "assumptions": [],
          "arithmetic_checks": [
              {"id": "M-1", "operation": "product", "values": [65537, 65539],
-              "expected": 4295360521},
+              "expected": 4295229443},
              {"id": "M-2", "operation": "sum", "values": [2, 4], "expected": 7}
          ]},
         {"id": "C-DOWNSTREAM", "statement": "A derived numerical claim",
