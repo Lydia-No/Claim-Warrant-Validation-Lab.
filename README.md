@@ -6,6 +6,57 @@
 
 This public demonstrator is **not** the private Research Claim Governance implementation or a release of ArcTopia research, protocols, datasets or restricted keys.
 
+## Why this exists
+
+Technical and research claims can become stronger on paper without acquiring stronger evidence. A revised citation, more confident wording or a removed assumption does not by itself show that a claim has been verified. This **public, experimental tool** makes selected claim/evidence/assumption records and document revisions easier to inspect, so that missing support can be left unresolved instead of silently treated as closed.
+
+It is **not** an automatic scientific truth checker, a certified review service, or evidence that the separate private Research Claim Governance method has been validated.
+
+## See the idea in a minute — fictional example
+
+Imagine a completely fictional technical report:
+
+1. **Claim:** "This equipment is proven to work in our operating environment."
+2. **Available evidence:** A laboratory test was conducted under different conditions.
+3. **Revision:** The report changes the claim to "verified" but introduces no independent evidence that the test transfers to the target environment.
+
+The useful question is not whether the new sentence *sounds* more convincing. It is whether the underlying evidence is applicable, which assumptions remain open, and whether a status upgrade has been justified. The public lab can **flag structural mismatches and record changes**; only appropriate independent assessment could establish whether the real-world claim is scientifically true.
+
+This example is invented, outside every private blinded Study 1 case. It **does not reproduce or reveal the L0–L5 rubric**.
+
+### Try the existing public sandbox locally
+
+The repository already contains Python code, invented sample records, a revision comparator and tests; there is no need to wait for the separate blinded study to run it. With Python 3.10+ from the repository root:
+
+```bash
+# Inspect three explicitly synthetic claim records (including an applicability mismatch).
+python -m auditlab examples/synthetic_claims.json
+
+# Inspect what changes between two synthetic document versions.
+python -m auditlab --compare examples/synthetic_revision_before.json examples/synthetic_revision_after.json
+
+# Run code-level checks; these are not scientific validation.
+python -m unittest discover -s tests -v
+```
+
+See [the synthetic input](examples/synthetic_claims.json), [the independent external pilot limitations](pilot/README.md), and [source-bound local checking](docs/SOURCE-BOUND-PILOT.md). No private case packet or personal data is required. Use only authorized local inputs; do not commit sensitive material to the public repository.
+
+## Public sandbox versus private Study 1
+
+| | Public Claim–Warrant Validation Lab | Separate, blinded Research Claim Governance Study 1 |
+|---|---|---|
+| **Available now** | Experimental CLI, synthetic examples, structural checks, documentation and a prepared but unexecuted external pilot | [Volunteer invitation](INDEPENDENT-REVIEWERS.md) describing the participation request |
+| **Not established** | Independent scientific validity, generalization or superior auditing effectiveness | Independent reviewer agreement or validation; human review has not been completed |
+| **Disclosure** | Public code and deliberately bounded examples | Six-level L0–L5 rubric, 16 locked vignettes, pairing key, expected outcomes and individual ratings remain private |
+
+### What happens next (conditional, not a release promise)
+
+1. **Now:** Keep the public lab runnable and recruit eligible independent reviewers for the separate, locked Study 1.
+2. **After a properly completed human-review gate:** Evaluate agreement, uncertainty, disagreements and null outcomes, then decide what findings can responsibly be reported. There is **no inter-rater reliability result to report yet**.
+3. **Only after explicit disclosure, participant-privacy and IP review:** Consider a bounded methodological report, authorized illustrative materials or further tools. The locked rubric and case set **are not scheduled for automatic public release**.
+
+Interested in independent review? Read [the full voluntary invitation](INDEPENDENT-REVIEWERS.md). The verified contact address is **linda@arctopia.no** (subject: **Independent reviewer – Claim Warrant Study 1**). The work is unpaid; eligibility and consent are checked before any private study materials are shared. Reviewers are **not** being asked to endorse ArcTopia.
+
 ## Core question
 
 When a technical document fixes a weak citation or calculation, has the revision reduced its *unverified assumptions*, or merely replaced them with newer explanations and stronger labels?
